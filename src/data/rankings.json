@@ -1,0 +1,435 @@
+{
+  "asOf": "2026-09-03T23:41:10.236309+00:00",
+  "metric": "Trailing-30-day protocol revenue annualized (\u00d7365/30), divided by circulating market cap",
+  "methodology": {
+    "revenueSource": "https://api.llama.fi/overview/fees?excludeTotalDataChart=true&excludeTotalDataChartBreakdown=true&dataType=dailyRevenue",
+    "primaryMarketCapSource": "https://api.llama.fi/protocols",
+    "fallbackMarketCapSource": "https://api.coingecko.com/api/v3/coins/markets",
+    "categories": [
+      "Gaming",
+      "InfoFi",
+      "Interface",
+      "Launchpad",
+      "NFT Marketplace",
+      "Physical TCG",
+      "Prediction Market",
+      "Social",
+      "Telegram Bot",
+      "Trading App"
+    ],
+    "limitations": [
+      "Draft category screen, not a canonical list of every consumer crypto app.",
+      "Revenue is not profit, cash flow, or tokenholder revenue.",
+      "Annualizing 30 days can overstate temporary activity.",
+      "Market cap and revenue timestamps may differ slightly.",
+      "Small or illiquid tokens can dominate the ratio."
+    ]
+  },
+  "rankings": [
+    {
+      "id": "peptides",
+      "name": "PEPTIDES",
+      "symbol": "PEPTI",
+      "category": "Interface",
+      "chains": [
+        "Solana"
+      ],
+      "revenue30d": 13790,
+      "annualizedRevenue": 167778.33333333334,
+      "marketCap": 152192.03711904906,
+      "revenueYield": 1.1024120348825623,
+      "marketCapSource": "DeFiLlama",
+      "quality": "Direct match",
+      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/peptimart",
+      "rank": 1
+    },
+    {
+      "id": "stonks",
+      "name": "sTONks",
+      "symbol": "sTONks",
+      "category": "Launchpad",
+      "chains": [
+        "TON"
+      ],
+      "revenue30d": 7527.92,
+      "annualizedRevenue": 91589.69333333333,
+      "marketCap": 119010.74329770514,
+      "revenueYield": 0.7695918099109917,
+      "marketCapSource": "DeFiLlama",
+      "quality": "Direct match",
+      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/sTONks",
+      "rank": 2
+    },
+    {
+      "id": "collector-crypt",
+      "name": "Collector Crypt",
+      "symbol": "CARDS",
+      "category": "Physical TCG",
+      "chains": [
+        "Solana"
+      ],
+      "revenue30d": 9658134,
+      "annualizedRevenue": 117507297.0,
+      "marketCap": 166607665.09304553,
+      "revenueYield": 0.7052934625449291,
+      "marketCapSource": "DeFiLlama",
+      "quality": "Direct match",
+      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/collector-crypt",
+      "rank": 3
+    },
+    {
+      "id": "alt-fun",
+      "name": "Alt Fun",
+      "symbol": "ALT",
+      "category": "Launchpad",
+      "chains": [
+        "Hyperliquid L1"
+      ],
+      "revenue30d": 43149.67,
+      "annualizedRevenue": 524987.6516666666,
+      "marketCap": 804432.1842787655,
+      "revenueYield": 0.6526189055170113,
+      "marketCapSource": "DeFiLlama",
+      "quality": "Direct match",
+      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/alt-fun",
+      "rank": 4
+    },
+    {
+      "id": "ready-cards",
+      "name": "Ready Cards",
+      "symbol": "READY",
+      "category": "Physical TCG",
+      "chains": [
+        "Solana"
+      ],
+      "revenue30d": 112628,
+      "annualizedRevenue": 1370307.3333333333,
+      "marketCap": 4489760.451690717,
+      "revenueYield": 0.30520722610430456,
+      "marketCapSource": "DeFiLlama",
+      "quality": "Direct match",
+      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/ready-cards.ts",
+      "rank": 5
+    },
+    {
+      "id": "pump.fun",
+      "name": "pump.fun",
+      "symbol": "PUMP",
+      "category": "Launchpad",
+      "chains": [
+        "Solana"
+      ],
+      "revenue30d": 36616460,
+      "annualizedRevenue": 445500263.3333333,
+      "marketCap": 1700554002,
+      "revenueYield": 0.2619736055481838,
+      "marketCapSource": "CoinGecko fallback",
+      "quality": "Reviewed override",
+      "note": "Core pump.fun adapter only; related PUMP products are not summed to reduce double-counting risk.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/pumpdotfun.ts",
+      "rank": 6
+    },
+    {
+      "id": "limitless-exchange",
+      "name": "Limitless Exchange",
+      "symbol": "LMTS",
+      "category": "Prediction Market",
+      "chains": [
+        "Base"
+      ],
+      "revenue30d": 206452.99,
+      "annualizedRevenue": 2511844.7116666664,
+      "marketCap": 9833383.532557162,
+      "revenueYield": 0.2554405310593498,
+      "marketCapSource": "DeFiLlama",
+      "quality": "Direct match",
+      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/limitless-exchange",
+      "rank": 7
+    },
+    {
+      "id": "sport.fun",
+      "name": "Sport.fun",
+      "symbol": "FUN",
+      "category": "Prediction Market",
+      "chains": [
+        "Base"
+      ],
+      "revenue30d": 78596,
+      "annualizedRevenue": 956251.3333333334,
+      "marketCap": 3858587.011164719,
+      "revenueYield": 0.24782422440298627,
+      "marketCapSource": "DeFiLlama",
+      "quality": "Direct match",
+      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/footballdotfun",
+      "rank": 8
+    },
+    {
+      "id": "bankr",
+      "name": "Bankr",
+      "symbol": "BNKR",
+      "category": "Interface",
+      "chains": [
+        "Base"
+      ],
+      "revenue30d": 553979.54,
+      "annualizedRevenue": 6740084.403333334,
+      "marketCap": 27476187.2656953,
+      "revenueYield": 0.2453063934292112,
+      "marketCapSource": "DeFiLlama",
+      "quality": "Direct match",
+      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/bankr.ts",
+      "rank": 9
+    },
+    {
+      "id": "ansem.io",
+      "name": "Ansem.io",
+      "symbol": "ANSEM",
+      "category": "Launchpad",
+      "chains": [
+        "Solana"
+      ],
+      "revenue30d": 1952228,
+      "annualizedRevenue": 23752107.333333332,
+      "marketCap": 106183442.9261814,
+      "revenueYield": 0.2236893688768951,
+      "marketCapSource": "DeFiLlama",
+      "quality": "Direct match",
+      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/ansem-io",
+      "rank": 10
+    },
+    {
+      "id": "pons",
+      "name": "Pons",
+      "symbol": "PONS",
+      "category": "Launchpad",
+      "chains": [
+        "Robinhood Chain"
+      ],
+      "revenue30d": 7931995,
+      "annualizedRevenue": 96505939.16666667,
+      "marketCap": 524101762,
+      "revenueYield": 0.18413588002145787,
+      "marketCapSource": "CoinGecko fallback",
+      "quality": "Reviewed override",
+      "note": "Pons V1 and V2 revenue are aggregated; review version overlap before production use.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/ponsdotfamily",
+      "rank": 11
+    },
+    {
+      "id": "bloxwap",
+      "name": "Bloxwap",
+      "symbol": "BLOXWAP",
+      "category": "Interface",
+      "chains": [
+        "Hyperliquid L1"
+      ],
+      "revenue30d": 1476.45,
+      "annualizedRevenue": 17963.475,
+      "marketCap": 106149.72339013757,
+      "revenueYield": 0.16922771370753278,
+      "marketCapSource": "DeFiLlama",
+      "quality": "Direct match",
+      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/factory/hyperliquid.ts",
+      "rank": 12
+    },
+    {
+      "id": "graphite-protocol",
+      "name": "Graphite Protocol",
+      "symbol": "GP",
+      "category": "Launchpad",
+      "chains": [
+        "Solana"
+      ],
+      "revenue30d": 64846,
+      "annualizedRevenue": 788959.6666666666,
+      "marketCap": 5381667.766107187,
+      "revenueYield": 0.1466013327012489,
+      "marketCapSource": "DeFiLlama",
+      "quality": "Direct match",
+      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/graphite-protocol",
+      "rank": 13
+    },
+    {
+      "id": "orynth",
+      "name": "Orynth",
+      "symbol": "ORY",
+      "category": "Launchpad",
+      "chains": [
+        "Solana"
+      ],
+      "revenue30d": 3751,
+      "annualizedRevenue": 45637.166666666664,
+      "marketCap": 402666.9684076288,
+      "revenueYield": 0.11333724950705948,
+      "marketCapSource": "DeFiLlama",
+      "quality": "Direct match",
+      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/orynth.ts",
+      "rank": 14
+    },
+    {
+      "id": "overtime",
+      "name": "Overtime",
+      "symbol": "OVER",
+      "category": "Prediction Market",
+      "chains": [
+        "Polygon",
+        "Arbitrum",
+        "Base",
+        "OP Mainnet"
+      ],
+      "revenue30d": 95716,
+      "annualizedRevenue": 1164544.6666666667,
+      "marketCap": 12442651.562997712,
+      "revenueYield": 0.09359296615922451,
+      "marketCapSource": "DeFiLlama",
+      "quality": "Direct match",
+      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/thales",
+      "rank": 15
+    },
+    {
+      "id": "metaplex",
+      "name": "Metaplex",
+      "symbol": "MPLX",
+      "category": "Launchpad",
+      "chains": [
+        "Solana"
+      ],
+      "revenue30d": 91461,
+      "annualizedRevenue": 1112775.5,
+      "marketCap": 15263726.476237938,
+      "revenueYield": 0.07290326524995924,
+      "marketCapSource": "DeFiLlama",
+      "quality": "Direct match",
+      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/metaplex.ts",
+      "rank": 16
+    },
+    {
+      "id": "anoncoin",
+      "name": "Anoncoin",
+      "symbol": "ANONCOIN",
+      "category": "Launchpad",
+      "chains": [
+        "Solana"
+      ],
+      "revenue30d": 12140,
+      "annualizedRevenue": 147703.33333333334,
+      "marketCap": 2254075.534257757,
+      "revenueYield": 0.06552723326637343,
+      "marketCapSource": "DeFiLlama",
+      "quality": "Direct match",
+      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/anoncoin",
+      "rank": 17
+    },
+    {
+      "id": "opinion",
+      "name": "OPINION",
+      "symbol": "OPN",
+      "category": "Prediction Market",
+      "chains": [
+        "BSC"
+      ],
+      "revenue30d": 45898,
+      "annualizedRevenue": 558425.6666666666,
+      "marketCap": 10182513.694526125,
+      "revenueYield": 0.05484163178360004,
+      "marketCapSource": "DeFiLlama",
+      "quality": "Direct match",
+      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/opinion",
+      "rank": 18
+    },
+    {
+      "id": "haystack",
+      "name": "Haystack",
+      "symbol": "HAY",
+      "category": "Trading App",
+      "chains": [
+        "Algorand"
+      ],
+      "revenue30d": 563.0100000000001,
+      "annualizedRevenue": 6849.955000000002,
+      "marketCap": 181559.62409265435,
+      "revenueYield": 0.0377284048379848,
+      "marketCapSource": "DeFiLlama",
+      "quality": "Direct match",
+      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/haystack",
+      "rank": 19
+    },
+    {
+      "id": "kintara",
+      "name": "Kintara",
+      "symbol": "KINS",
+      "category": "Gaming",
+      "chains": [
+        "Solana"
+      ],
+      "revenue30d": 3994,
+      "annualizedRevenue": 48593.666666666664,
+      "marketCap": 1314388.02359136,
+      "revenueYield": 0.03697056409103003,
+      "marketCapSource": "DeFiLlama",
+      "quality": "Direct match",
+      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/kintara",
+      "rank": 20
+    }
+  ],
+  "watchlist": [
+    {
+      "id": "gmgn",
+      "name": "GMGN",
+      "category": "Telegram Bot",
+      "revenue30d": 29737435,
+      "reason": "No verifiable circulating token market cap in the configured source set."
+    },
+    {
+      "id": "axiom",
+      "name": "Axiom",
+      "category": "Trading App",
+      "revenue30d": 24003538,
+      "reason": "No verifiable circulating token market cap in the configured source set."
+    },
+    {
+      "id": "fomo-wallet",
+      "name": "fomo Wallet",
+      "category": "Trading App",
+      "revenue30d": 15602614,
+      "reason": "No verifiable circulating token market cap in the configured source set."
+    },
+    {
+      "id": "terminal",
+      "name": "Terminal",
+      "category": "Telegram Bot",
+      "revenue30d": 2942045,
+      "reason": "No verifiable circulating token market cap in the configured source set."
+    },
+    {
+      "id": "trojan",
+      "name": "Trojan",
+      "category": "Telegram Bot",
+      "revenue30d": 946525,
+      "reason": "No verifiable circulating token market cap in the configured source set."
+    }
+  ],
+  "coverage": {
+    "eligibleRows": 33,
+    "rankedRows": 20,
+    "unrankedWatchlistRows": 5
+  }
+}
