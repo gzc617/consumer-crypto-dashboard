@@ -13,6 +13,7 @@ import {
   nextSortState,
   sortRankings,
 } from '../lib/rankings'
+import { PAGE_SIZE, pageCount, slicePage } from '../lib/pagination'
 import snapshot from '../data/rankings.json'
 import type { RankingRow, RankingsSnapshot } from '../types'
 
@@ -87,10 +88,11 @@ describe('snapshot calculation integrity', () => {
       expect(row.revenueYield).toBeCloseTo(yieldValue, 10)
       expect(row.revenue30d).toBeGreaterThan(0)
       expect(row.marketCap).toBeGreaterThan(0)
+      expect(row.marketCapSource).toBe('DeFiLlama')
     }
   })
 
-  it('ranks by revenue yield descending without inventing rows', () => {
+  it('ranks all eligible rows globally without truncation', () => {
     const sorted = [...data.rankings].sort(
       (a, b) => b.revenueYield - a.revenueYield || a.name.localeCompare(b.name),
     )
@@ -98,8 +100,12 @@ describe('snapshot calculation integrity', () => {
     expect(data.rankings.map((row) => row.rank)).toEqual(
       sorted.map((_, index) => index + 1),
     )
+    expect(data.rankings.length).toBeGreaterThan(20)
     expect(data.coverage.rankedRows).toBe(data.rankings.length)
-    expect(data.watchlist[0]?.name).toBe('GMGN')
+    expect(data.coverage.eligibleRows).toBe(data.rankings.length)
+    expect(data.coverage.revenueProtocolsSeen).toBeGreaterThan(data.rankings.length)
+    expect(data).not.toHaveProperty('watchlist')
+    expect(data.methodology.categories.length).toBeGreaterThan(10)
   })
 })
 
@@ -128,5 +134,14 @@ describe('ranking helpers', () => {
     })
     expect(defaultSortDirection('name')).toBe('asc')
     expect(defaultSortDirection('marketCap')).toBe('desc')
+  })
+
+  it('paginates large result sets', () => {
+    expect(PAGE_SIZE).toBe(50)
+    expect(pageCount(245)).toBe(5)
+    expect(slicePage(data.rankings, 1)).toHaveLength(PAGE_SIZE)
+    expect(slicePage(data.rankings, 5).length).toBe(
+      data.rankings.length - PAGE_SIZE * 4,
+    )
   })
 })

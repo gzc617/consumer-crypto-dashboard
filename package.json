@@ -12,7 +12,7 @@
     "typecheck": "tsc -b --pretty false",
     "test": "vitest run",
     "test:watch": "vitest",
-    "refresh-data": "python3 scripts/refresh_data.py"
+    "refresh-data": "tsx scripts/refresh_data.ts"
   },
   "engines": {
     "node": ">=20"

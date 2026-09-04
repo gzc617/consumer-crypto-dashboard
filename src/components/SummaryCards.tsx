@@ -33,7 +33,7 @@ export function SummaryCards({
         <p className="hint">Of the filtered ranked set</p>
       </article>
       <article className="summary-card">
-        <p className="label">Ranked apps</p>
+        <p className="label">Ranked protocols</p>
         <p className="value">{rankedApps}</p>
         <p className="hint">Matching current filters</p>
       </article>

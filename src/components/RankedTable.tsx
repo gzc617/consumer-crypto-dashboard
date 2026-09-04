@@ -11,7 +11,7 @@ interface RankedTableProps {
 
 const COLUMNS: { key: SortKey; label: string; numeric?: boolean }[] = [
   { key: 'rank', label: 'Rank', numeric: true },
-  { key: 'name', label: 'App / token' },
+  { key: 'name', label: 'Protocol / token' },
   { key: 'category', label: 'Category' },
   { key: 'revenue30d', label: '30d revenue', numeric: true },
   { key: 'annualizedRevenue', label: 'Annualized', numeric: true },
@@ -31,7 +31,7 @@ export function RankedTable({
   onSelect,
 }: RankedTableProps) {
   if (rows.length === 0) {
-    return <p className="empty-state">No ranked apps match the current filters.</p>
+    return <p className="empty-state">No ranked protocols match the current filters.</p>
   }
 
   return (
@@ -39,7 +39,7 @@ export function RankedTable({
       <div className="table-wrap desktop-only">
         <table className="data-table">
           <caption className="sr-only">
-            Ranked consumer crypto apps by revenue yield
+            Ranked DeFi protocols by revenue yield
           </caption>
           <thead>
             <tr>

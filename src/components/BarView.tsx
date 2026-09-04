@@ -8,7 +8,7 @@ interface BarViewProps {
 
 export function BarView({ rows, onSelect }: BarViewProps) {
   if (rows.length === 0) {
-    return <p className="empty-state">No ranked apps match the current filters.</p>
+    return <p className="empty-state">No ranked protocols match the current filters.</p>
   }
 
   const maxYield = Math.max(...rows.map((row) => row.revenueYield), 0)

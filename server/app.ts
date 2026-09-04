@@ -2,7 +2,13 @@ import { createReadStream, existsSync, statSync } from 'node:fs'
 import { createServer, type IncomingMessage, type Server, type ServerResponse } from 'node:http'
 import { extname, join, normalize, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import type { ProtocolHistoryResponse, RankingsSnapshot } from '../src/types.ts'
 import { loadRankings } from './loadRankings.ts'
+import {
+  createProtocolHistoryService,
+  parseHistoryDays,
+  type ProtocolHistoryService,
+} from './protocolHistory.ts'
 
 const MIME_TYPES: Record<string, string> = {
   '.css': 'text/css; charset=utf-8',
@@ -21,7 +27,10 @@ const MIME_TYPES: Record<string, string> = {
 
 export interface AppOptions {
   distDir?: string
-  rankings?: ReturnType<typeof loadRankings>
+  getRankings?: () => RankingsSnapshot
+  /** @deprecated Prefer getRankings for live snapshots. */
+  rankings?: RankingsSnapshot
+  historyService?: ProtocolHistoryService
 }
 
 function sendJson(res: ServerResponse, status: number, body: unknown): void {
@@ -66,11 +75,21 @@ function sendFile(res: ServerResponse, filePath: string): void {
   createReadStream(filePath).pipe(res)
 }
 
+const HISTORY_PATH =
+  /^\/api\/protocols\/([^/]+)\/history\/?$/
+
 export function createApp(options: AppOptions = {}): Server {
   const distDir =
     options.distDir ??
     join(fileURLToPath(new URL('.', import.meta.url)), '../dist')
-  const rankings = options.rankings ?? loadRankings()
+  const getRankings =
+    options.getRankings ??
+    (() => {
+      const staticSnapshot = options.rankings ?? loadRankings()
+      return () => staticSnapshot
+    })()
+  const historyService =
+    options.historyService ?? createProtocolHistoryService()
 
   return createServer((req: IncomingMessage, res: ServerResponse) => {
     const method = req.method ?? 'GET'
@@ -87,7 +106,57 @@ export function createApp(options: AppOptions = {}): Server {
     }
 
     if (url.pathname === '/api/rankings') {
-      sendJson(res, 200, rankings)
+      sendJson(res, 200, getRankings())
+      return
+    }
+
+    const historyMatch = HISTORY_PATH.exec(url.pathname)
+    if (historyMatch) {
+      const encodedSlug = historyMatch[1] ?? ''
+      let slug = ''
+      try {
+        slug = decodeURIComponent(encodedSlug)
+      } catch {
+        sendJson(res, 400, { error: 'Invalid protocol slug encoding' })
+        return
+      }
+      if (!slug) {
+        sendJson(res, 400, { error: 'Protocol slug is required' })
+        return
+      }
+
+      const days = parseHistoryDays(url.searchParams.get('days'))
+      if (days === null) {
+        sendJson(res, 400, {
+          error: 'Query parameter days must be one of 30, 60, or 90',
+        })
+        return
+      }
+
+      void historyService
+        .getHistory(slug, days)
+        .then((body: ProtocolHistoryResponse) => {
+          sendJson(res, 200, body)
+        })
+        .catch((error: unknown) => {
+          console.error('protocol history failed', error)
+          sendJson(res, 200, {
+            slug,
+            days,
+            revenue: {
+              source: '',
+              available: false,
+              points: [],
+              error: 'Unexpected history handler failure.',
+            },
+            price: {
+              source: '',
+              available: false,
+              points: [],
+              error: 'Unexpected history handler failure.',
+            },
+          } satisfies ProtocolHistoryResponse)
+        })
       return
     }
 

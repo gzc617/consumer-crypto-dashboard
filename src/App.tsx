@@ -1,47 +1,66 @@
-import { useMemo, useState } from 'react'
-import snapshot from './data/rankings.json'
+import { useEffect, useMemo, useState } from 'react'
 import { BarView } from './components/BarView'
+import { CoveragePanel } from './components/CoveragePanel'
 import { DetailDialog } from './components/DetailDialog'
 import { MethodologyDialog } from './components/MethodologyDialog'
+import { Pagination } from './components/Pagination'
 import { RankedTable } from './components/RankedTable'
 import { SummaryCards } from './components/SummaryCards'
-import { Watchlist } from './components/Watchlist'
+import { useRankings } from './hooks/useRankings'
+import { downloadCsv, rankingsToCsv } from './lib/csv'
 import { formatTimestamp, median, sum } from './lib/format'
+import { PAGE_SIZE, clampPage, slicePage } from './lib/pagination'
 import {
   defaultSortDirection,
   filterRankings,
   nextSortState,
   sortRankings,
 } from './lib/rankings'
-import type { RankingRow, RankingsSnapshot, SortDirection, SortKey } from './types'
-
-const data = snapshot as RankingsSnapshot
+import type { RankingRow, SortDirection, SortKey } from './types'
 
 type ViewMode = 'table' | 'bars'
 
 export default function App() {
+  const { data, status, error, usingFallback } = useRankings()
   const [search, setSearch] = useState('')
   const [category, setCategory] = useState('all')
   const [sortKey, setSortKey] = useState<SortKey>('rank')
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc')
   const [viewMode, setViewMode] = useState<ViewMode>('table')
+  const [page, setPage] = useState(1)
   const [selected, setSelected] = useState<RankingRow | null>(null)
   const [methodologyOpen, setMethodologyOpen] = useState(false)
 
   const categories = useMemo(() => {
     const fromData = new Set(data.rankings.map((row) => row.category))
     return ['all', ...[...fromData].sort((a, b) => a.localeCompare(b))]
-  }, [])
+  }, [data.rankings])
 
   const filtered = useMemo(
     () => filterRankings(data.rankings, search, category),
-    [search, category],
+    [data.rankings, search, category],
   )
 
   const visible = useMemo(
     () => sortRankings(filtered, sortKey, sortDirection),
     [filtered, sortKey, sortDirection],
   )
+
+  const safePage = clampPage(page, visible.length)
+  const paged = useMemo(
+    () => slicePage(visible, safePage),
+    [visible, safePage],
+  )
+
+  useEffect(() => {
+    setPage(1)
+  }, [search, category, sortKey, sortDirection, data.asOf])
+
+  useEffect(() => {
+    if (page !== safePage) {
+      setPage(safePage)
+    }
+  }, [page, safePage])
 
   const coveredMarketCap = sum(filtered.map((row) => row.marketCap))
   const revenue30d = sum(filtered.map((row) => row.revenue30d))
@@ -53,6 +72,12 @@ export default function App() {
     setSortDirection(next.sortDirection)
   }
 
+  const excludedTotal =
+    data.coverage.excluded.missingProtocolMatch +
+    data.coverage.excluded.nonPositiveRevenue +
+    data.coverage.excluded.nonPositiveMarketCap +
+    data.coverage.excluded.invalidSymbol
+
   return (
     <div className="app-shell">
       <a className="sr-only" href="#main-content">
@@ -63,11 +88,11 @@ export default function App() {
         <div className="brand-row">
           <div className="brand-block">
             <p className="eyebrow">Draft research terminal</p>
-            <h1>Consumer Crypto Revenue Yield</h1>
+            <h1>DeFi Protocol Revenue Yield</h1>
             <p className="lede">
-              Ranking tokenized, consumer-facing crypto apps by annualized protocol
-              revenue divided by circulating market cap. Snapshot data only — no
-              invented prices, history, or liquidity.
+              Ranking DeFiLlama protocols with positive trailing-30-day revenue and
+              positive circulating market cap by annualized revenue divided by market
+              cap. Every eligible category is included; the list is not truncated.
             </p>
           </div>
           <div className="header-actions">
@@ -77,6 +102,15 @@ export default function App() {
               onClick={() => setMethodologyOpen(true)}
             >
               Methodology
+            </button>
+            <button
+              type="button"
+              className="btn btn-secondary"
+              onClick={() =>
+                downloadCsv('defi-protocol-revenue-yield.csv', rankingsToCsv(visible))
+              }
+            >
+              Export CSV
             </button>
             <a
               className="btn btn-secondary"
@@ -104,12 +138,24 @@ export default function App() {
           <span className="meta-chip">
             Coverage{' '}
             <strong>
-              {data.coverage.rankedRows} ranked / {data.coverage.unrankedWatchlistRows}{' '}
-              watchlist
+              {data.coverage.rankedRows} ranked / {excludedTotal} excluded
             </strong>
           </span>
-          <p className="disclaimer">Draft universe · Not investment advice</p>
+          <span className="meta-chip" role="status">
+            {status === 'loading'
+              ? 'Loading live rankings…'
+              : status === 'live'
+                ? 'Live API snapshot'
+                : 'Checked-in snapshot fallback'}
+          </span>
+          <p className="disclaimer">Not investment advice · Eligibility filters apply</p>
         </div>
+        {status === 'error' && usingFallback && error ? (
+          <p className="banner-warning" role="status">
+            Live rankings unavailable ({error}). Showing the checked-in snapshot for
+            static development and tests.
+          </p>
+        ) : null}
       </header>
 
       <main id="main-content">
@@ -123,10 +169,10 @@ export default function App() {
         <section className="panel" aria-labelledby="rankings-heading">
           <div className="panel-header">
             <div>
-              <h2 id="rankings-heading">Ranked apps</h2>
+              <h2 id="rankings-heading">Ranked protocols</h2>
               <p>
                 Showing {visible.length} of {data.rankings.length} ranked protocols
-                from the checked-in snapshot.
+                matching current filters.
               </p>
             </div>
             <div className="view-toggle" role="group" aria-label="Result view">
@@ -207,20 +253,34 @@ export default function App() {
             </div>
           </div>
 
+          <Pagination
+            page={safePage}
+            pageSize={PAGE_SIZE}
+            totalItems={visible.length}
+            onPageChange={setPage}
+          />
+
           {viewMode === 'table' ? (
             <RankedTable
-              rows={visible}
+              rows={paged}
               sortKey={sortKey}
               sortDirection={sortDirection}
               onSort={handleSort}
               onSelect={setSelected}
             />
           ) : (
-            <BarView rows={visible} onSelect={setSelected} />
+            <BarView rows={paged} onSelect={setSelected} />
           )}
+
+          <Pagination
+            page={safePage}
+            pageSize={PAGE_SIZE}
+            totalItems={visible.length}
+            onPageChange={setPage}
+          />
         </section>
 
-        <Watchlist rows={data.watchlist} />
+        <CoveragePanel coverage={data.coverage} />
 
         <section className="panel" aria-labelledby="caveats-heading">
           <div className="panel-header">
@@ -235,21 +295,22 @@ export default function App() {
                 <li key={item}>{item}</li>
               ))}
               <li>
-                Known overrides: PUMP uses the core pump.fun adapter only; PONS
-                aggregates V1 and V2 and is flagged in row detail.
+                Market cap is DeFiLlama circulating mcap only; there is no CoinGecko
+                market-cap fallback for rankings.
               </li>
               <li>
-                CoinGecko market-cap fallback is used only for reviewed IDs currently
-                blank on DeFiLlama (PUMP and PONS).
+                Detail price charts use CoinGecko when a protocol exposes gecko_id;
+                missing price data does not remove the protocol from rankings.
               </li>
             </ul>
           </div>
         </section>
 
         <p className="footer-note">
-          Source snapshot generated into <code>src/data/rankings.json</code>. This
-          dashboard works offline after install/build and does not fabricate
-          historical series or tokenholder accrual.
+          Production serves the latest successful in-memory snapshot from{' '}
+          <code>GET /api/rankings</code> (refreshed on startup and every 4 hours). A
+          checked-in snapshot in <code>src/data/rankings.json</code> backs static
+          development, tests, and startup fallback.
         </p>
       </main>
 

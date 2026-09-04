@@ -1,6 +1,6 @@
-export type MarketCapSource = 'DeFiLlama' | 'CoinGecko fallback'
+export type MarketCapSource = 'DeFiLlama'
 
-export type DataQuality = 'Direct match' | 'Reviewed override'
+export type DataQuality = 'Direct match'
 
 export interface RankingRow {
   id: string
@@ -19,12 +19,11 @@ export interface RankingRow {
   rank: number
 }
 
-export interface WatchlistRow {
-  id: string
-  name: string
-  category: string
-  revenue30d: number
-  reason: string
+export interface CoverageExclusionCounts {
+  missingProtocolMatch: number
+  nonPositiveRevenue: number
+  nonPositiveMarketCap: number
+  invalidSymbol: number
 }
 
 export interface RankingsSnapshot {
@@ -33,16 +32,17 @@ export interface RankingsSnapshot {
   methodology: {
     revenueSource: string
     primaryMarketCapSource: string
-    fallbackMarketCapSource: string
     categories: string[]
+    eligibility: string[]
     limitations: string[]
   }
   rankings: RankingRow[]
-  watchlist: WatchlistRow[]
   coverage: {
+    revenueProtocolsSeen: number
     eligibleRows: number
     rankedRows: number
-    unrankedWatchlistRows: number
+    excluded: CoverageExclusionCounts
+    notes: string[]
   }
 }
 
@@ -56,3 +56,26 @@ export type SortKey =
   | 'revenueYield'
 
 export type SortDirection = 'asc' | 'desc'
+
+export type HistoryDays = 30 | 60 | 90
+
+export interface DailyPoint {
+  /** UTC calendar date YYYY-MM-DD */
+  date: string
+  value: number
+}
+
+export interface ProtocolHistorySeries {
+  source: string
+  available: boolean
+  points: DailyPoint[]
+  geckoId?: string | null
+  error?: string
+}
+
+export interface ProtocolHistoryResponse {
+  slug: string
+  days: HistoryDays
+  revenue: ProtocolHistorySeries
+  price: ProtocolHistorySeries
+}

@@ -34,11 +34,11 @@ export function MethodologyDialog({
           <li>
             Revenue:{' '}
             <a href={snapshot.methodology.revenueSource} target="_blank" rel="noreferrer">
-              DeFiLlama fees overview
+              DeFiLlama fees overview (dailyRevenue)
             </a>
           </li>
           <li>
-            Primary market cap:{' '}
+            Circulating market cap:{' '}
             <a
               href={snapshot.methodology.primaryMarketCapSource}
               target="_blank"
@@ -48,25 +48,23 @@ export function MethodologyDialog({
             </a>
           </li>
           <li>
-            Fallback market cap:{' '}
-            <a
-              href={snapshot.methodology.fallbackMarketCapSource}
-              target="_blank"
-              rel="noreferrer"
-            >
-              CoinGecko markets
-            </a>{' '}
-            (reviewed IDs only)
+            Detail charts: DeFiLlama{' '}
+            <code>summary/fees/&#123;slug&#125;?dataType=dailyRevenue</code> and CoinGecko
+            free <code>market_chart</code> when <code>gecko_id</code> is present.
           </li>
         </ul>
       </div>
 
       <div className="detail-block">
-        <h3>Universe screen</h3>
-        <p>
-          Retail-facing DeFiLlama categories with positive 30-day revenue and a
-          verifiable token market cap. Categories:{' '}
-          {snapshot.methodology.categories.join(', ')}.
+        <h3>Eligibility</h3>
+        <ul>
+          {snapshot.methodology.eligibility.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+        <p style={{ marginTop: '0.75rem' }}>
+          Categories currently represented in the ranked set:{' '}
+          {snapshot.methodology.categories.join(', ') || 'none'}.
         </p>
       </div>
 
