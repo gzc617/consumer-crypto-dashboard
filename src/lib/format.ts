@@ -38,6 +38,15 @@ export function formatYield(value: number): string {
   return percent.format(value)
 }
 
+/** Brief metric: annualize trailing-30-day revenue, then divide by circulating mcap. */
+export function annualizeRevenue(revenue30d: number): number {
+  return (revenue30d * 365) / 30
+}
+
+export function computeRevenueYield(revenue30d: number, marketCap: number): number {
+  return annualizeRevenue(revenue30d) / marketCap
+}
+
 export function formatTimestamp(iso: string): string {
   const date = new Date(iso)
   return new Intl.DateTimeFormat('en-US', {

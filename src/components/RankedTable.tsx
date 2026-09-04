@@ -99,6 +99,9 @@ export function RankedTable({
                   <div className="app-cell">
                     <span className="name">{row.name}</span>
                     <span className="symbol">{row.symbol}</span>
+                    {row.quality === 'Reviewed override' ? (
+                      <span className="row-note">{row.note}</span>
+                    ) : null}
                   </div>
                 </td>
                 <td>{row.category}</td>
@@ -133,6 +136,9 @@ export function RankedTable({
                 <span className="symbol">
                   {row.symbol} · {row.category}
                 </span>
+                {row.quality === 'Reviewed override' ? (
+                  <span className="row-note">{row.note}</span>
+                ) : null}
               </div>
               <strong className="yield-cell">{formatYield(row.revenueYield)}</strong>
             </div>

@@ -1,4 +1,5 @@
 import { useEffect, useId, useRef } from 'react'
+import { createPortal } from 'react-dom'
 
 interface DialogProps {
   title: string
@@ -8,23 +9,67 @@ interface DialogProps {
   children: React.ReactNode
 }
 
+const FOCUSABLE_SELECTOR = [
+  'a[href]',
+  'button:not([disabled])',
+  'input:not([disabled])',
+  'select:not([disabled])',
+  'textarea:not([disabled])',
+  '[tabindex]:not([tabindex="-1"])',
+].join(',')
+
 export function Dialog({ title, eyebrow, open, onClose, children }: DialogProps) {
   const titleId = useId()
   const closeRef = useRef<HTMLButtonElement>(null)
+  const drawerRef = useRef<HTMLDivElement>(null)
+  const onCloseRef = useRef(onClose)
   const previouslyFocused = useRef<HTMLElement | null>(null)
+
+  onCloseRef.current = onClose
 
   useEffect(() => {
     if (!open) return
 
     previouslyFocused.current = document.activeElement as HTMLElement | null
     const previousOverflow = document.body.style.overflow
+    const root = document.getElementById('root')
     document.body.style.overflow = 'hidden'
+    root?.setAttribute('aria-hidden', 'true')
     closeRef.current?.focus()
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         event.preventDefault()
-        onClose()
+        onCloseRef.current()
+        return
+      }
+
+      if (event.key !== 'Tab' || !drawerRef.current) return
+
+      const focusable = [
+        ...drawerRef.current.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR),
+      ].filter(
+        (element) =>
+          !element.hasAttribute('disabled') &&
+          element.getAttribute('aria-hidden') !== 'true' &&
+          element.tabIndex !== -1,
+      )
+
+      if (focusable.length === 0) {
+        event.preventDefault()
+        return
+      }
+
+      const first = focusable[0]!
+      const last = focusable[focusable.length - 1]!
+      const active = document.activeElement
+
+      if (event.shiftKey && active === first) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && active === last) {
+        event.preventDefault()
+        first.focus()
       }
     }
 
@@ -32,13 +77,14 @@ export function Dialog({ title, eyebrow, open, onClose, children }: DialogProps)
     return () => {
       document.removeEventListener('keydown', onKeyDown)
       document.body.style.overflow = previousOverflow
+      root?.removeAttribute('aria-hidden')
       previouslyFocused.current?.focus()
     }
-  }, [open, onClose])
+  }, [open])
 
   if (!open) return null
 
-  return (
+  return createPortal(
     <div
       className="overlay"
       role="presentation"
@@ -47,6 +93,7 @@ export function Dialog({ title, eyebrow, open, onClose, children }: DialogProps)
       }}
     >
       <div
+        ref={drawerRef}
         className="drawer"
         role="dialog"
         aria-modal="true"
@@ -69,6 +116,7 @@ export function Dialog({ title, eyebrow, open, onClose, children }: DialogProps)
         </div>
         {children}
       </div>
-    </div>
+    </div>,
+    document.body,
   )
 }

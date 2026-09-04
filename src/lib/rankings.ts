@@ -1,5 +1,16 @@
 import type { RankingRow, SortDirection, SortKey } from '../types'
 
+const DEFAULT_DESC: SortKey[] = [
+  'revenueYield',
+  'revenue30d',
+  'annualizedRevenue',
+  'marketCap',
+]
+
+export function defaultSortDirection(key: SortKey): SortDirection {
+  return DEFAULT_DESC.includes(key) ? 'desc' : 'asc'
+}
+
 export function filterRankings(
   rows: RankingRow[],
   search: string,
@@ -46,14 +57,8 @@ export function nextSortState(
       sortDirection: currentDirection === 'asc' ? 'desc' : 'asc',
     }
   }
-  const defaultDesc: SortKey[] = [
-    'revenueYield',
-    'revenue30d',
-    'annualizedRevenue',
-    'marketCap',
-  ]
   return {
     sortKey: nextKey,
-    sortDirection: defaultDesc.includes(nextKey) ? 'desc' : 'asc',
+    sortDirection: defaultSortDirection(nextKey),
   }
 }

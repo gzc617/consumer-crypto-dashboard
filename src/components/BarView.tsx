@@ -19,25 +19,25 @@ export function BarView({ rows, onSelect }: BarViewProps) {
         const width =
           maxYield === 0 ? 0 : Math.max((row.revenueYield / maxYield) * 100, 2)
         return (
-          <button
-            key={row.id}
-            type="button"
-            className="bar-row-button"
-            role="listitem"
-            onClick={() => onSelect(row)}
-            aria-label={`${row.name} revenue yield ${formatYield(row.revenueYield)}`}
-          >
-            <div className="bar-label">
-              <strong>
-                #{row.rank} {row.name}
-              </strong>
-              <span>{row.symbol}</span>
-            </div>
-            <div className="bar-track" aria-hidden="true">
-              <div className="bar-fill" style={{ width: `${width}%` }} />
-            </div>
-            <div className="bar-value">{formatYield(row.revenueYield)}</div>
-          </button>
+          <div key={row.id} role="listitem">
+            <button
+              type="button"
+              className="bar-row-button"
+              onClick={() => onSelect(row)}
+              aria-label={`${row.name} revenue yield ${formatYield(row.revenueYield)}`}
+            >
+              <div className="bar-label">
+                <strong>
+                  #{row.rank} {row.name}
+                </strong>
+                <span>{row.symbol}</span>
+              </div>
+              <div className="bar-track" aria-hidden="true">
+                <div className="bar-fill" style={{ width: `${width}%` }} />
+              </div>
+              <div className="bar-value">{formatYield(row.revenueYield)}</div>
+            </button>
+          </div>
         )
       })}
     </div>

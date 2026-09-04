@@ -1,11 +1,22 @@
 import { describe, expect, it } from 'vitest'
-import { formatCompactUsd, formatTimestamp, formatYield, median } from '../lib/format'
 import {
+  annualizeRevenue,
+  computeRevenueYield,
+  formatCompactUsd,
+  formatTimestamp,
+  formatYield,
+  median,
+} from '../lib/format'
+import {
+  defaultSortDirection,
   filterRankings,
   nextSortState,
   sortRankings,
 } from '../lib/rankings'
-import type { RankingRow } from '../types'
+import snapshot from '../data/rankings.json'
+import type { RankingRow, RankingsSnapshot } from '../types'
+
+const data = snapshot as RankingsSnapshot
 
 const sample: RankingRow[] = [
   {
@@ -60,6 +71,36 @@ describe('format helpers', () => {
     expect(median([1, 4, 2, 3])).toBe(2.5)
     expect(median([])).toBeNull()
   })
+
+  it('annualizes trailing 30d revenue per the brief formula', () => {
+    expect(annualizeRevenue(30)).toBe(365)
+    expect(computeRevenueYield(30, 365)).toBe(1)
+  })
+})
+
+describe('snapshot calculation integrity', () => {
+  it('keeps annualized revenue and yield consistent with the brief metric', () => {
+    for (const row of data.rankings) {
+      const annualized = annualizeRevenue(row.revenue30d)
+      const yieldValue = computeRevenueYield(row.revenue30d, row.marketCap)
+      expect(row.annualizedRevenue).toBeCloseTo(annualized, 6)
+      expect(row.revenueYield).toBeCloseTo(yieldValue, 10)
+      expect(row.revenue30d).toBeGreaterThan(0)
+      expect(row.marketCap).toBeGreaterThan(0)
+    }
+  })
+
+  it('ranks by revenue yield descending without inventing rows', () => {
+    const sorted = [...data.rankings].sort(
+      (a, b) => b.revenueYield - a.revenueYield || a.name.localeCompare(b.name),
+    )
+    expect(data.rankings.map((row) => row.id)).toEqual(sorted.map((row) => row.id))
+    expect(data.rankings.map((row) => row.rank)).toEqual(
+      sorted.map((_, index) => index + 1),
+    )
+    expect(data.coverage.rankedRows).toBe(data.rankings.length)
+    expect(data.watchlist[0]?.name).toBe('GMGN')
+  })
 })
 
 describe('ranking helpers', () => {
@@ -85,5 +126,7 @@ describe('ranking helpers', () => {
       sortKey: 'revenueYield',
       sortDirection: 'desc',
     })
+    expect(defaultSortDirection('name')).toBe('asc')
+    expect(defaultSortDirection('marketCap')).toBe('desc')
   })
 })

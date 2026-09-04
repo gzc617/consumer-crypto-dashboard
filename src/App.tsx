@@ -7,7 +7,12 @@ import { RankedTable } from './components/RankedTable'
 import { SummaryCards } from './components/SummaryCards'
 import { Watchlist } from './components/Watchlist'
 import { formatTimestamp, median, sum } from './lib/format'
-import { filterRankings, nextSortState, sortRankings } from './lib/rankings'
+import {
+  defaultSortDirection,
+  filterRankings,
+  nextSortState,
+  sortRankings,
+} from './lib/rankings'
 import type { RankingRow, RankingsSnapshot, SortDirection, SortKey } from './types'
 
 const data = snapshot as RankingsSnapshot
@@ -172,7 +177,11 @@ export default function App() {
               <select
                 id="sort"
                 value={sortKey}
-                onChange={(event) => handleSort(event.target.value as SortKey)}
+                onChange={(event) => {
+                  const key = event.target.value as SortKey
+                  setSortKey(key)
+                  setSortDirection(defaultSortDirection(key))
+                }}
               >
                 <option value="rank">Rank</option>
                 <option value="name">Name</option>

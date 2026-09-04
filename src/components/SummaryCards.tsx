@@ -18,12 +18,12 @@ export function SummaryCards({
       <article className="summary-card">
         <p className="label">Covered market cap</p>
         <p className="value">{formatCompactUsd(coveredMarketCap)}</p>
-        <p className="hint">Sum of ranked circulating caps</p>
+        <p className="hint">Sum of filtered circulating caps</p>
       </article>
       <article className="summary-card">
         <p className="label">30-day revenue</p>
         <p className="value">{formatCompactUsd(revenue30d)}</p>
-        <p className="hint">Across ranked apps</p>
+        <p className="hint">Across the filtered ranked set</p>
       </article>
       <article className="summary-card">
         <p className="label">Median revenue yield</p>
@@ -35,7 +35,7 @@ export function SummaryCards({
       <article className="summary-card">
         <p className="label">Ranked apps</p>
         <p className="value">{rankedApps}</p>
-        <p className="hint">Draft universe snapshot</p>
+        <p className="hint">Matching current filters</p>
       </article>
     </section>
   )
