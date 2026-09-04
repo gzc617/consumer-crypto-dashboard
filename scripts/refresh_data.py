@@ -7,6 +7,7 @@ fallbacks for protocols whose DeFiLlama market cap is blank.
 """
 from __future__ import annotations
 
+import csv
 import json
 import math
 import urllib.parse
@@ -16,6 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "src" / "data" / "rankings.json"
+CSV_OUT = ROOT / "data" / "top20.csv"
 
 REVENUE_URL = (
     "https://api.llama.fi/overview/fees"
@@ -193,7 +195,26 @@ def main() -> None:
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(snapshot, indent=2) + "\n")
-    print(f"Wrote {OUT} with {len(top20)} ranked rows")
+    CSV_OUT.parent.mkdir(parents=True, exist_ok=True)
+    with CSV_OUT.open("w", newline="") as handle:
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=[
+                "rank",
+                "name",
+                "symbol",
+                "category",
+                "revenue30d",
+                "annualizedRevenue",
+                "marketCap",
+                "revenueYield",
+                "marketCapSource",
+                "quality",
+            ],
+        )
+        writer.writeheader()
+        writer.writerows({key: row.get(key) for key in writer.fieldnames} for row in top20)
+    print(f"Wrote {OUT} and {CSV_OUT} with {len(top20)} ranked rows")
 
 
 if __name__ == "__main__":

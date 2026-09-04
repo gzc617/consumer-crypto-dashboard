@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-03T23:41:10.236309+00:00",
+  "asOf": "2026-09-04T00:00:44.045655+00:00",
   "metric": "Trailing-30-day protocol revenue annualized (\u00d7365/30), divided by circulating market cap",
   "methodology": {
     "revenueSource": "https://api.llama.fi/overview/fees?excludeTotalDataChart=true&excludeTotalDataChartBreakdown=true&dataType=dailyRevenue",
@@ -126,8 +126,8 @@
       ],
       "revenue30d": 36616460,
       "annualizedRevenue": 445500263.3333333,
-      "marketCap": 1700554002,
-      "revenueYield": 0.2619736055481838,
+      "marketCap": 1713051946,
+      "revenueYield": 0.26006231998602414,
       "marketCapSource": "CoinGecko fallback",
       "quality": "Reviewed override",
       "note": "Core pump.fun adapter only; related PUMP products are not summed to reduce double-counting risk.",
@@ -216,8 +216,8 @@
       ],
       "revenue30d": 7931995,
       "annualizedRevenue": 96505939.16666667,
-      "marketCap": 524101762,
-      "revenueYield": 0.18413588002145787,
+      "marketCap": 490913695,
+      "revenueYield": 0.19658432867037182,
       "marketCapSource": "CoinGecko fallback",
       "quality": "Reviewed override",
       "note": "Pons V1 and V2 revenue are aggregated; review version overlap before production use.",
