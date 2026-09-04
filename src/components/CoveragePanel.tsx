@@ -8,7 +8,7 @@ export function CoveragePanel({ coverage }: CoveragePanelProps) {
   const excludedTotal =
     coverage.excluded.missingProtocolMatch +
     coverage.excluded.nonPositiveRevenue +
-    coverage.excluded.nonPositiveMarketCap +
+    coverage.excluded.belowMinMarketCap +
     coverage.excluded.invalidSymbol
 
   return (
@@ -17,8 +17,8 @@ export function CoveragePanel({ coverage }: CoveragePanelProps) {
         <div>
           <h2 id="coverage-heading">Coverage & exclusions</h2>
           <p>
-            Protocols lacking positive revenue, positive DeFiLlama circulating market
-            cap, a valid token symbol, or a slug match are not ranked.
+            Protocols lacking positive revenue, DeFiLlama circulating market cap of
+            at least $1,000,000, a valid token symbol, or a slug match are not ranked.
           </p>
         </div>
       </div>
@@ -48,8 +48,8 @@ export function CoveragePanel({ coverage }: CoveragePanelProps) {
           <strong>{coverage.excluded.missingProtocolMatch}</strong>
         </li>
         <li>
-          Non-positive DeFiLlama circulating market cap:{' '}
-          <strong>{coverage.excluded.nonPositiveMarketCap}</strong>
+          DeFiLlama circulating market cap below $1,000,000:{' '}
+          <strong>{coverage.excluded.belowMinMarketCap}</strong>
         </li>
         <li>
           Invalid or placeholder token symbol:{' '}

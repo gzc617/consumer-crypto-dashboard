@@ -7,6 +7,9 @@ export const REVENUE_URL =
 
 export const PROTOCOLS_URL = 'https://api.llama.fi/protocols'
 
+/** Inclusive minimum DeFiLlama circulating market cap for ranked protocols. */
+export const MIN_CIRCULATING_MARKET_CAP = 1_000_000
+
 interface RevenueProtocol {
   slug?: string
   name?: string
@@ -51,7 +54,7 @@ export function buildRankingsSnapshot(
   const excluded = {
     missingProtocolMatch: 0,
     nonPositiveRevenue: 0,
-    nonPositiveMarketCap: 0,
+    belowMinMarketCap: 0,
     invalidSymbol: 0,
   }
 
@@ -77,8 +80,12 @@ export function buildRankingsSnapshot(
       continue
     }
 
-    if (!finitePositive(protocol.mcap)) {
-      excluded.nonPositiveMarketCap += 1
+    if (
+      typeof protocol.mcap !== 'number' ||
+      !Number.isFinite(protocol.mcap) ||
+      protocol.mcap < MIN_CIRCULATING_MARKET_CAP
+    ) {
+      excluded.belowMinMarketCap += 1
       continue
     }
 
@@ -129,13 +136,13 @@ export function buildRankingsSnapshot(
       eligibility: [
         'Any DeFiLlama revenue category is eligible when other filters pass.',
         'Trailing-30-day protocol revenue (total30d) must be finite and > 0.',
-        'Circulating market cap from DeFiLlama /protocols must be finite and > 0.',
+        'Circulating market cap from DeFiLlama /protocols must be finite and at least $1,000,000 (inclusive).',
         'Token symbol must be present and not a placeholder ("-").',
         'Protocols are matched by DeFiLlama slug; there is no CoinGecko market-cap fallback.',
         'All eligible matches are ranked globally; the list is not truncated.',
       ],
       limitations: [
-        'Only protocols with positive DeFiLlama revenue and circulating market cap are ranked; others are counted in coverage exclusions, not ranked.',
+        'Only protocols with positive DeFiLlama revenue and circulating market cap of at least $1,000,000 are ranked; others are counted in coverage exclusions, not ranked.',
         'Revenue is not profit, cash flow, or tokenholder revenue.',
         'Annualizing 30 days can overstate temporary activity.',
         'Market cap and revenue timestamps may differ slightly.',

@@ -25,7 +25,7 @@ function snapshot(label: string): RankingsSnapshot {
       excluded: {
         missingProtocolMatch: 0,
         nonPositiveRevenue: 0,
-        nonPositiveMarketCap: 0,
+        belowMinMarketCap: 0,
         invalidSymbol: 0,
       },
       notes: [],

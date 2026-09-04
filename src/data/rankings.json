@@ -1,12 +1,11 @@
 {
-  "asOf": "2026-09-04T12:36:48.814Z",
+  "asOf": "2026-09-04T13:01:02.819Z",
   "metric": "Trailing-30-day protocol revenue annualized (×365/30), divided by circulating market cap",
   "methodology": {
     "revenueSource": "https://api.llama.fi/overview/fees?excludeTotalDataChart=true&excludeTotalDataChartBreakdown=true&dataType=dailyRevenue",
     "primaryMarketCapSource": "https://api.llama.fi/protocols",
     "categories": [
       "AI Agents",
-      "Algo-Stables",
       "Basis Trading",
       "Bridge",
       "Canonical Bridge",
@@ -36,13 +35,9 @@
       "Leveraged Farming",
       "Liquid Restaking",
       "Liquid Staking",
-      "Liquidity Manager",
-      "Luck Games",
       "NFT Marketplace",
-      "Onchain Capital Allocator",
       "Options",
       "Oracle",
-      "OTC Marketplace",
       "Payments",
       "Physical TCG",
       "Prediction Market",
@@ -55,22 +50,20 @@
       "SoFi",
       "Staking Pool",
       "Telegram Bot",
-      "Trading App",
       "Video Infrastructure",
-      "Volume Boosting",
       "Yield",
       "Yield Aggregator"
     ],
     "eligibility": [
       "Any DeFiLlama revenue category is eligible when other filters pass.",
       "Trailing-30-day protocol revenue (total30d) must be finite and > 0.",
-      "Circulating market cap from DeFiLlama /protocols must be finite and > 0.",
+      "Circulating market cap from DeFiLlama /protocols must be finite and at least $1,000,000 (inclusive).",
       "Token symbol must be present and not a placeholder (\"-\").",
       "Protocols are matched by DeFiLlama slug; there is no CoinGecko market-cap fallback.",
       "All eligible matches are ranked globally; the list is not truncated."
     ],
     "limitations": [
-      "Only protocols with positive DeFiLlama revenue and circulating market cap are ranked; others are counted in coverage exclusions, not ranked.",
+      "Only protocols with positive DeFiLlama revenue and circulating market cap of at least $1,000,000 are ranked; others are counted in coverage exclusions, not ranked.",
       "Revenue is not profit, cash flow, or tokenholder revenue.",
       "Annualizing 30 days can overstate temporary activity.",
       "Market cap and revenue timestamps may differ slightly.",
@@ -79,305 +72,6 @@
     ]
   },
   "rankings": [
-    {
-      "id": "full-sail",
-      "name": "Full Sail",
-      "symbol": "SAIL",
-      "category": "Dexs",
-      "chains": [
-        "Sui"
-      ],
-      "revenue30d": 19082.49,
-      "annualizedRevenue": 232170.295,
-      "marketCap": 13655.460347040726,
-      "revenueYield": 17.00201158361634,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/fullsail-finance",
-      "rank": 1
-    },
-    {
-      "id": "fly.trade",
-      "name": "fly.trade",
-      "symbol": "FLY",
-      "category": "Cross Chain Bridge",
-      "chains": [
-        "Berachain",
-        "Ink",
-        "Scroll",
-        "BSC",
-        "Ethereum",
-        "Arbitrum",
-        "OP Mainnet",
-        "Base",
-        "Fantom",
-        "Metis",
-        "Taiko",
-        "Manta",
-        "Avalanche",
-        "Polygon",
-        "Linea",
-        "Stable",
-        "Pharos",
-        "Telos",
-        "Tempo",
-        "Katana",
-        "Morph",
-        "Plasma",
-        "Abstract",
-        "0G",
-        "Blast",
-        "Unichain",
-        "Sonic",
-        "ZKsync Era",
-        "Monad",
-        "MegaETH",
-        "Hyperliquid L1",
-        "Robinhood Chain"
-      ],
-      "revenue30d": 88935,
-      "annualizedRevenue": 1082042.5,
-      "marketCap": 77961.90195111361,
-      "revenueYield": 13.879118812141089,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/fly-trade",
-      "rank": 2
-    },
-    {
-      "id": "hawkfi",
-      "name": "HawkFi",
-      "symbol": "HAWK",
-      "category": "Liquidity Manager",
-      "chains": [
-        "Solana"
-      ],
-      "revenue30d": 14682,
-      "annualizedRevenue": 178631,
-      "marketCap": 18617.455451014284,
-      "revenueYield": 9.59481280726084,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/hawkfi.ts",
-      "rank": 3
-    },
-    {
-      "id": "yala",
-      "name": "Yala",
-      "symbol": "YALA",
-      "category": "CDP",
-      "chains": [
-        "Ethereum"
-      ],
-      "revenue30d": 2040,
-      "annualizedRevenue": 24820,
-      "marketCap": 3489.4037641655727,
-      "revenueYield": 7.112963038238497,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/yala",
-      "rank": 4
-    },
-    {
-      "id": "aark-digital",
-      "name": "Aark Digital",
-      "symbol": "AARK",
-      "category": "Derivatives",
-      "chains": [
-        "Arbitrum"
-      ],
-      "revenue30d": 197513,
-      "annualizedRevenue": 2403074.8333333335,
-      "marketCap": 369864.2289989568,
-      "revenueYield": 6.497180978645305,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/aark",
-      "rank": 5
-    },
-    {
-      "id": "minebean",
-      "name": "MineBean",
-      "symbol": "BEAN",
-      "category": "Gamified Mining",
-      "chains": [
-        "Base"
-      ],
-      "revenue30d": 50300,
-      "annualizedRevenue": 611983.3333333334,
-      "marketCap": 105881.89970643027,
-      "revenueYield": 5.7798673336059085,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/minebean.ts",
-      "rank": 6
-    },
-    {
-      "id": "gamma",
-      "name": "Gamma",
-      "symbol": "GAMMA",
-      "category": "Liquidity Manager",
-      "chains": [
-        "BSC",
-        "OP Mainnet",
-        "Ethereum",
-        "Polygon zkEVM",
-        "Polygon",
-        "Arbitrum",
-        "Celo",
-        "Moonbeam",
-        "Avalanche",
-        "Fantom",
-        "Mantle",
-        "Rollux",
-        "Linea",
-        "Base",
-        "Kava",
-        "opBNB",
-        "Manta",
-        "Metis",
-        "Gnosis",
-        "Astar zkEVM",
-        "Immutable zkEVM",
-        "Scroll",
-        "Blast",
-        "X Layer",
-        "Mode",
-        "Taiko",
-        "Rootstock",
-        "Sei",
-        "IOTA EVM",
-        "CORE",
-        "Zircuit",
-        "World Chain",
-        "ApeChain",
-        "Sonic",
-        "BOB"
-      ],
-      "revenue30d": 6398.37,
-      "annualizedRevenue": 77846.83499999999,
-      "marketCap": 16216.114772587927,
-      "revenueYield": 4.800584855972651,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/gamma.ts",
-      "rank": 7
-    },
-    {
-      "id": "jade",
-      "name": "Jade",
-      "symbol": "JADE",
-      "category": "Gamified Mining",
-      "chains": [
-        "Solana"
-      ],
-      "revenue30d": 5126,
-      "annualizedRevenue": 62366.333333333336,
-      "marketCap": 17521.971933823726,
-      "revenueYield": 3.5593216088278177,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/jade",
-      "rank": 8
-    },
-    {
-      "id": "fragmetric",
-      "name": "Fragmetric",
-      "symbol": "FRAG",
-      "category": "Liquid Restaking",
-      "chains": [
-        "Solana"
-      ],
-      "revenue30d": 1188.7599999999998,
-      "annualizedRevenue": 14463.246666666664,
-      "marketCap": 4497.626443596766,
-      "revenueYield": 3.215750985113019,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/fragmetric",
-      "rank": 9
-    },
-    {
-      "id": "zinc",
-      "name": "ZINC",
-      "symbol": "ZINC",
-      "category": "Gamified Mining",
-      "chains": [
-        "Solana"
-      ],
-      "revenue30d": 21865.84,
-      "annualizedRevenue": 266034.38666666666,
-      "marketCap": 115996.45054568644,
-      "revenueYield": 2.29347006236097,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/zinc",
-      "rank": 10
-    },
-    {
-      "id": "token.select",
-      "name": "token.select",
-      "symbol": "SELECT",
-      "category": "Launchpad",
-      "chains": [
-        "Robinhood Chain"
-      ],
-      "revenue30d": 28073.739999999998,
-      "annualizedRevenue": 341563.83666666667,
-      "marketCap": 174780.44051784032,
-      "revenueYield": 1.9542451984597344,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/token-select",
-      "rank": 11
-    },
-    {
-      "id": "neverland",
-      "name": "Neverland",
-      "symbol": "DUST",
-      "category": "Lending",
-      "chains": [
-        "Monad"
-      ],
-      "revenue30d": 14469,
-      "annualizedRevenue": 176039.5,
-      "marketCap": 110141.4124185555,
-      "revenueYield": 1.5983043628587303,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/neverland.ts",
-      "rank": 12
-    },
-    {
-      "id": "flashtrade",
-      "name": "FlashTrade",
-      "symbol": "FAF",
-      "category": "Derivatives",
-      "chains": [
-        "Solana"
-      ],
-      "revenue30d": 20147.11,
-      "annualizedRevenue": 245123.1716666667,
-      "marketCap": 155342.05462520669,
-      "revenueYield": 1.5779575740650182,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/flashtrade.ts",
-      "rank": 13
-    },
     {
       "id": "fake-world-assets",
       "name": "Fake World Assets",
@@ -388,31 +82,13 @@
       ],
       "revenue30d": 1072199,
       "annualizedRevenue": 13045087.833333334,
-      "marketCap": 10081854.133421132,
-      "revenueYield": 1.293917533491101,
+      "marketCap": 10641706.117013188,
+      "revenueYield": 1.2258455260738494,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/fwa",
-      "rank": 14
-    },
-    {
-      "id": "peptides",
-      "name": "PEPTIDES",
-      "symbol": "PEPTI",
-      "category": "Interface",
-      "chains": [
-        "Solana"
-      ],
-      "revenue30d": 13790,
-      "annualizedRevenue": 167778.33333333334,
-      "marketCap": 141295.2450956304,
-      "revenueYield": 1.1874308524662585,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/peptimart",
-      "rank": 15
+      "rank": 1
     },
     {
       "id": "ore-protocol",
@@ -424,31 +100,13 @@
       ],
       "revenue30d": 2722384,
       "annualizedRevenue": 33122338.666666668,
-      "marketCap": 29646429.85578061,
-      "revenueYield": 1.117245443306163,
+      "marketCap": 29820301.9599115,
+      "revenueYield": 1.1107311626553686,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/ore",
-      "rank": 16
-    },
-    {
-      "id": "kyros",
-      "name": "Kyros",
-      "symbol": "KYROS",
-      "category": "Liquid Restaking",
-      "chains": [
-        "Solana"
-      ],
-      "revenue30d": 26178.950000000004,
-      "annualizedRevenue": 318510.5583333334,
-      "marketCap": 348604.3044774387,
-      "revenueYield": 0.9136736243426021,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/kyros",
-      "rank": 17
+      "rank": 2
     },
     {
       "id": "collector-crypt",
@@ -460,52 +118,13 @@
       ],
       "revenue30d": 9507399,
       "annualizedRevenue": 115673354.5,
-      "marketCap": 130624042.12788211,
-      "revenueYield": 0.8855441357935835,
+      "marketCap": 132614520.77334754,
+      "revenueYield": 0.872252554437068,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/collector-crypt",
-      "rank": 18
-    },
-    {
-      "id": "thorwallet",
-      "name": "THORWallet",
-      "symbol": "TITN",
-      "category": "DEX Aggregator",
-      "chains": [
-        "THORChain"
-      ],
-      "revenue30d": 17660,
-      "annualizedRevenue": 214863.33333333334,
-      "marketCap": 253010.98264813932,
-      "revenueYield": 0.8492253224918,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/thorwallet",
-      "rank": 19
-    },
-    {
-      "id": "ooga-booga",
-      "name": "Ooga Booga",
-      "symbol": "OOGA",
-      "category": "DEX Aggregator",
-      "chains": [
-        "Berachain",
-        "Hyperliquid L1",
-        "Monad",
-        "Botanix"
-      ],
-      "revenue30d": 994.1400000000002,
-      "annualizedRevenue": 12095.370000000003,
-      "marketCap": 19373.071152684275,
-      "revenueYield": 0.6243393163981698,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/aggregators/oogabooga",
-      "rank": 20
+      "rank": 3
     },
     {
       "id": "streamflow",
@@ -517,49 +136,13 @@
       ],
       "revenue30d": 128880,
       "annualizedRevenue": 1568040,
-      "marketCap": 2566236.413967346,
-      "revenueYield": 0.611027102361097,
+      "marketCap": 2565541.244297699,
+      "revenueYield": 0.6111926687926785,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/streamflow",
-      "rank": 21
-    },
-    {
-      "id": "alt-fun",
-      "name": "Alt Fun",
-      "symbol": "ALT",
-      "category": "Launchpad",
-      "chains": [
-        "Hyperliquid L1"
-      ],
-      "revenue30d": 39692.72,
-      "annualizedRevenue": 482928.0933333334,
-      "marketCap": 834432.9289766728,
-      "revenueYield": 0.5787500427692661,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/alt-fun",
-      "rank": 22
-    },
-    {
-      "id": "stonks",
-      "name": "sTONks",
-      "symbol": "sTONks",
-      "category": "Launchpad",
-      "chains": [
-        "TON"
-      ],
-      "revenue30d": 5649.719999999999,
-      "annualizedRevenue": 68738.26,
-      "marketCap": 119077.5981911432,
-      "revenueYield": 0.5772560166158326,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/sTONks",
-      "rank": 23
+      "rank": 4
     },
     {
       "id": "meth-protocol",
@@ -571,31 +154,13 @@
       ],
       "revenue30d": 94080,
       "annualizedRevenue": 1144640,
-      "marketCap": 2179941.9819754185,
-      "revenueYield": 0.5250781944952273,
+      "marketCap": 2180828.834229799,
+      "revenueYield": 0.5248646670632687,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/meth-protocol.ts",
-      "rank": 24
-    },
-    {
-      "id": "kinetic",
-      "name": "Kinetic",
-      "symbol": "JOULE",
-      "category": "Lending",
-      "chains": [
-        "Flare"
-      ],
-      "revenue30d": 13426,
-      "annualizedRevenue": 163349.66666666666,
-      "marketCap": 319229.5770095925,
-      "revenueYield": 0.5116996620327514,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/kinetic.ts",
-      "rank": 25
+      "rank": 5
     },
     {
       "id": "immunefi",
@@ -607,52 +172,13 @@
       ],
       "revenue30d": 98694,
       "annualizedRevenue": 1200777,
-      "marketCap": 2442216.7922411575,
-      "revenueYield": 0.49167502402523355,
+      "marketCap": 2425073.248812567,
+      "revenueYield": 0.4951508168208768,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/immunefi.ts",
-      "rank": 26
-    },
-    {
-      "id": "echelon-market",
-      "name": "Echelon Market",
-      "symbol": "ELON",
-      "category": "Lending",
-      "chains": [
-        "Aptos",
-        "Movement"
-      ],
-      "revenue30d": 23448,
-      "annualizedRevenue": 285284,
-      "marketCap": 617134.7838289386,
-      "revenueYield": 0.46227178806870955,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/echelon.ts",
-      "rank": 27
-    },
-    {
-      "id": "primefi",
-      "name": "PrimeFi",
-      "symbol": "PRFI",
-      "category": "Lending",
-      "chains": [
-        "Base",
-        "Hyperliquid L1",
-        "XDC"
-      ],
-      "revenue30d": 7975.92,
-      "annualizedRevenue": 97040.36,
-      "marketCap": 217115.49319426483,
-      "revenueYield": 0.4469527189069497,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/aave.ts",
-      "rank": 28
+      "rank": 6
     },
     {
       "id": "symbiosis",
@@ -711,31 +237,13 @@
       ],
       "revenue30d": 65335,
       "annualizedRevenue": 794909.1666666666,
-      "marketCap": 1931083.3668476895,
-      "revenueYield": 0.41163896925086174,
+      "marketCap": 1929712.9213794544,
+      "revenueYield": 0.41193130742909995,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/symbiosis",
-      "rank": 29
-    },
-    {
-      "id": "turbos",
-      "name": "Turbos",
-      "symbol": "TURBOS",
-      "category": "Dexs",
-      "chains": [
-        "Sui"
-      ],
-      "revenue30d": 25557,
-      "annualizedRevenue": 310943.5,
-      "marketCap": 790672.7260984641,
-      "revenueYield": 0.3932644819233054,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/turbos",
-      "rank": 30
+      "rank": 7
     },
     {
       "id": "stockrip",
@@ -747,31 +255,13 @@
       ],
       "revenue30d": 33031.3,
       "annualizedRevenue": 401880.8166666667,
-      "marketCap": 1035467.3461844829,
-      "revenueYield": 0.3881153936408788,
+      "marketCap": 1031160.327004206,
+      "revenueYield": 0.3897364998847822,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/stockrip",
-      "rank": 31
-    },
-    {
-      "id": "thorswap",
-      "name": "THORSwap",
-      "symbol": "THOR",
-      "category": "DEX Aggregator",
-      "chains": [
-        "Ethereum"
-      ],
-      "revenue30d": 250096,
-      "annualizedRevenue": 3042834.6666666665,
-      "marketCap": 8411550.032050362,
-      "revenueYield": 0.3617448217121237,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/thorswap",
-      "rank": 32
+      "rank": 8
     },
     {
       "id": "gains-network",
@@ -787,13 +277,31 @@
       ],
       "revenue30d": 343362,
       "annualizedRevenue": 4177571,
-      "marketCap": 11700952.40946412,
-      "revenueYield": 0.3570282874256493,
+      "marketCap": 11156452.845792174,
+      "revenueYield": 0.37445333725186986,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/gains-network.ts",
-      "rank": 33
+      "rank": 9
+    },
+    {
+      "id": "thorswap",
+      "name": "THORSwap",
+      "symbol": "THOR",
+      "category": "DEX Aggregator",
+      "chains": [
+        "Ethereum"
+      ],
+      "revenue30d": 250096,
+      "annualizedRevenue": 3042834.6666666665,
+      "marketCap": 8423397.539722256,
+      "revenueYield": 0.3612360276619448,
+      "marketCapSource": "DeFiLlama",
+      "quality": "Direct match",
+      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/thorswap",
+      "rank": 10
     },
     {
       "id": "quickswap-dex",
@@ -806,31 +314,13 @@
       ],
       "revenue30d": 176592,
       "annualizedRevenue": 2148536,
-      "marketCap": 6022535.6324447,
-      "revenueYield": 0.3567494044245039,
+      "marketCap": 6040966.396893292,
+      "revenueYield": 0.3556609752216028,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/quickswap-v2.ts",
-      "rank": 34
-    },
-    {
-      "id": "fx-protocol",
-      "name": "fx Protocol",
-      "symbol": "FXN",
-      "category": "Dual-Token Stablecoin",
-      "chains": [
-        "Ethereum"
-      ],
-      "revenue30d": 126853,
-      "annualizedRevenue": 1543378.1666666667,
-      "marketCap": 4383813.079363479,
-      "revenueYield": 0.3520629503871917,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/fx-protocol.ts",
-      "rank": 35
+      "rank": 11
     },
     {
       "id": "groypfi",
@@ -842,13 +332,31 @@
       ],
       "revenue30d": 63375,
       "annualizedRevenue": 771062.5,
-      "marketCap": 2210460.9002419007,
-      "revenueYield": 0.3488243107650622,
+      "marketCap": 2189916.277298115,
+      "revenueYield": 0.35209679383328985,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/aggregators/groypfi",
-      "rank": 36
+      "rank": 12
+    },
+    {
+      "id": "fx-protocol",
+      "name": "fx Protocol",
+      "symbol": "FXN",
+      "category": "Dual-Token Stablecoin",
+      "chains": [
+        "Ethereum"
+      ],
+      "revenue30d": 126853,
+      "annualizedRevenue": 1543378.1666666667,
+      "marketCap": 4428505.124553895,
+      "revenueYield": 0.34850996515943716,
+      "marketCapSource": "DeFiLlama",
+      "quality": "Direct match",
+      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/fx-protocol.ts",
+      "rank": 13
     },
     {
       "id": "piteas",
@@ -860,13 +368,13 @@
       ],
       "revenue30d": 86112,
       "annualizedRevenue": 1047696,
-      "marketCap": 3058089.3591961777,
-      "revenueYield": 0.342598229462918,
+      "marketCap": 3062989.1385543724,
+      "revenueYield": 0.34205018451174696,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/piteas",
-      "rank": 37
+      "rank": 14
     },
     {
       "id": "inverse-finance-firm",
@@ -878,13 +386,13 @@
       ],
       "revenue30d": 185225,
       "annualizedRevenue": 2253570.8333333335,
-      "marketCap": 6846385.129693136,
-      "revenueYield": 0.3291621477090848,
+      "marketCap": 6850865.790153534,
+      "revenueYield": 0.3289468663321791,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/inverse-finance",
-      "rank": 38
+      "rank": 15
     },
     {
       "id": "ready-cards",
@@ -896,13 +404,13 @@
       ],
       "revenue30d": 98418,
       "annualizedRevenue": 1197419,
-      "marketCap": 3968090.6416629115,
-      "revenueYield": 0.3017620080115399,
+      "marketCap": 3955843.5874444535,
+      "revenueYield": 0.30269624506907117,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/ready-cards.ts",
-      "rank": 39
+      "rank": 16
     },
     {
       "id": "resupply",
@@ -914,13 +422,13 @@
       ],
       "revenue30d": 74372,
       "annualizedRevenue": 904859.3333333334,
-      "marketCap": 3040482.4619893883,
-      "revenueYield": 0.2976038653882857,
+      "marketCap": 3043160.417728849,
+      "revenueYield": 0.2973419764734722,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/resupply",
-      "rank": 40
+      "rank": 17
     },
     {
       "id": "sport.fun",
@@ -932,13 +440,13 @@
       ],
       "revenue30d": 80396,
       "annualizedRevenue": 978151.3333333334,
-      "marketCap": 3809678.6920289816,
-      "revenueYield": 0.2567542862288955,
+      "marketCap": 3806453.1762075042,
+      "revenueYield": 0.2569718549140011,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/footballdotfun",
-      "rank": 41
+      "rank": 18
     },
     {
       "id": "bankr",
@@ -950,13 +458,13 @@
       ],
       "revenue30d": 551631.54,
       "annualizedRevenue": 6711517.070000001,
-      "marketCap": 26269816.324802898,
-      "revenueYield": 0.2554839739653322,
+      "marketCap": 26128567.235822614,
+      "revenueYield": 0.25686510130560936,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/bankr.ts",
-      "rank": 42
+      "rank": 19
     },
     {
       "id": "definitive",
@@ -976,67 +484,13 @@
       ],
       "revenue30d": 367954,
       "annualizedRevenue": 4476773.666666667,
-      "marketCap": 18088839.478379104,
-      "revenueYield": 0.2474881637386181,
+      "marketCap": 18096654.831561644,
+      "revenueYield": 0.24738128169737245,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/definitive.ts",
-      "rank": 43
-    },
-    {
-      "id": "alkimi",
-      "name": "Alkimi",
-      "symbol": "ALKIMI",
-      "category": "Services",
-      "chains": [
-        "Sui"
-      ],
-      "revenue30d": 5122,
-      "annualizedRevenue": 62317.666666666664,
-      "marketCap": 259384.9101298007,
-      "revenueYield": 0.24025170406205135,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/alkimi",
-      "rank": 44
-    },
-    {
-      "id": "concentrator",
-      "name": "Concentrator",
-      "symbol": "CTR",
-      "category": "Yield",
-      "chains": [
-        "Ethereum"
-      ],
-      "revenue30d": 2473,
-      "annualizedRevenue": 30088.166666666668,
-      "marketCap": 125591.37661880709,
-      "revenueYield": 0.239571915498544,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/concentrator.ts",
-      "rank": 45
-    },
-    {
-      "id": "clever",
-      "name": "CLever",
-      "symbol": "CLEV",
-      "category": "Yield",
-      "chains": [
-        "Ethereum"
-      ],
-      "revenue30d": 5490,
-      "annualizedRevenue": 66795,
-      "marketCap": 283234.9294583621,
-      "revenueYield": 0.23582896406080248,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/clever.ts",
-      "rank": 46
+      "rank": 20
     },
     {
       "id": "ansem.io",
@@ -1048,13 +502,13 @@
       ],
       "revenue30d": 1959681,
       "annualizedRevenue": 23842785.5,
-      "marketCap": 103952127.51042852,
-      "revenueYield": 0.22936313157812074,
+      "marketCap": 102080079.97622146,
+      "revenueYield": 0.23356942417711604,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/ansem-io",
-      "rank": 47
+      "rank": 21
     },
     {
       "id": "limitless-exchange",
@@ -1066,31 +520,13 @@
       ],
       "revenue30d": 176474.99,
       "annualizedRevenue": 2147112.378333333,
-      "marketCap": 9678785.833508154,
-      "revenueYield": 0.2218369550961636,
+      "marketCap": 9674061.711396225,
+      "revenueYield": 0.22194528445110026,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/limitless-exchange",
-      "rank": 48
-    },
-    {
-      "id": "ravenhood",
-      "name": "Ravenhood",
-      "symbol": "RVH",
-      "category": "Volume Boosting",
-      "chains": [
-        "Robinhood Chain"
-      ],
-      "revenue30d": 13888.52,
-      "annualizedRevenue": 168976.99333333332,
-      "marketCap": 779269.6357994963,
-      "revenueYield": 0.21684021238678236,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/ravenhood.ts",
-      "rank": 49
+      "rank": 22
     },
     {
       "id": "usual-usd0",
@@ -1102,39 +538,13 @@
       ],
       "revenue30d": 391727,
       "annualizedRevenue": 4766011.833333333,
-      "marketCap": 22087592.59102793,
-      "revenueYield": 0.21577778627034738,
+      "marketCap": 22178517.695587043,
+      "revenueYield": 0.2148931636798093,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/usual.ts",
-      "rank": 50
-    },
-    {
-      "id": "velora",
-      "name": "Velora",
-      "symbol": "VLR",
-      "category": "DEX Aggregator",
-      "chains": [
-        "BSC",
-        "Ethereum",
-        "Avalanche",
-        "Polygon",
-        "Fantom",
-        "Arbitrum",
-        "OP Mainnet",
-        "Polygon zkEVM",
-        "Base"
-      ],
-      "revenue30d": 15435.51,
-      "annualizedRevenue": 187798.70500000002,
-      "marketCap": 883453.3099131704,
-      "revenueYield": 0.21257343528257047,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/aggregators/paraswap",
-      "rank": 51
+      "rank": 23
     },
     {
       "id": "dolomite",
@@ -1150,13 +560,13 @@
       ],
       "revenue30d": 213019,
       "annualizedRevenue": 2591731.1666666665,
-      "marketCap": 13566456.673526734,
-      "revenueYield": 0.19103965235993492,
+      "marketCap": 13601156.529161828,
+      "revenueYield": 0.19055226378064352,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/dolomite",
-      "rank": 52
+      "rank": 24
     },
     {
       "id": "gaib",
@@ -1169,49 +579,13 @@
       ],
       "revenue30d": 37996,
       "annualizedRevenue": 462284.6666666667,
-      "marketCap": 2588988.0819319263,
-      "revenueYield": 0.17855805126831858,
+      "marketCap": 2586982.4510177965,
+      "revenueYield": 0.17869648342020644,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/gaib",
-      "rank": 53
-    },
-    {
-      "id": "open-stablecoin-index",
-      "name": "Open Stablecoin Index",
-      "symbol": "SQUILL",
-      "category": "Indexes",
-      "chains": [
-        "Ethereum"
-      ],
-      "revenue30d": 592,
-      "annualizedRevenue": 7202.666666666667,
-      "marketCap": 41076.78538248964,
-      "revenueYield": 0.17534640550857336,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/open-stablecoin-index",
-      "rank": 54
-    },
-    {
-      "id": "mendi-finance",
-      "name": "Mendi Finance",
-      "symbol": "MENDI",
-      "category": "Lending",
-      "chains": [
-        "Linea"
-      ],
-      "revenue30d": 253.46,
-      "annualizedRevenue": 3083.763333333334,
-      "marketCap": 18009.326145978048,
-      "revenueYield": 0.1712314668709589,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/factory/compoundV2.ts",
-      "rank": 55
+      "rank": 25
     },
     {
       "id": "beefy",
@@ -1245,51 +619,13 @@
       ],
       "revenue30d": 60094,
       "annualizedRevenue": 731143.6666666666,
-      "marketCap": 4327840.676338651,
-      "revenueYield": 0.16893959860029167,
+      "marketCap": 4588737.472703056,
+      "revenueYield": 0.15933438576863646,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/beefy",
-      "rank": 56
-    },
-    {
-      "id": "stabull-finance",
-      "name": "Stabull Finance",
-      "symbol": "STABUL",
-      "category": "Dexs",
-      "chains": [
-        "Ethereum",
-        "Polygon",
-        "Base"
-      ],
-      "revenue30d": 127.9,
-      "annualizedRevenue": 1556.1166666666666,
-      "marketCap": 9576.757063099785,
-      "revenueYield": 0.16248889435261354,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/stabull",
-      "rank": 57
-    },
-    {
-      "id": "bloxwap",
-      "name": "Bloxwap",
-      "symbol": "BLOXWAP",
-      "category": "Interface",
-      "chains": [
-        "Hyperliquid L1"
-      ],
-      "revenue30d": 1360.4499999999998,
-      "annualizedRevenue": 16552.141666666666,
-      "marketCap": 102873.01717363781,
-      "revenueYield": 0.1608987674457779,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/factory/hyperliquid.ts",
-      "rank": 58
+      "rank": 26
     },
     {
       "id": "cowswap",
@@ -1307,31 +643,13 @@
       ],
       "revenue30d": 935639,
       "annualizedRevenue": 11383607.833333334,
-      "marketCap": 75350824.69248402,
-      "revenueYield": 0.1510747610234027,
+      "marketCap": 75546732.96627128,
+      "revenueYield": 0.15068299298151885,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/cow-protocol.ts",
-      "rank": 59
-    },
-    {
-      "id": "snake-finance",
-      "name": "Snake Finance",
-      "symbol": "SNAKE",
-      "category": "Algo-Stables",
-      "chains": [
-        "Sonic"
-      ],
-      "revenue30d": 806.3,
-      "annualizedRevenue": 9809.983333333334,
-      "marketCap": 67044.9317095987,
-      "revenueYield": 0.1463195365135834,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/snakefinance.ts",
-      "rank": 60
+      "rank": 27
     },
     {
       "id": "dextools",
@@ -1346,13 +664,13 @@
       ],
       "revenue30d": 78096,
       "annualizedRevenue": 950168,
-      "marketCap": 6882079.532022277,
-      "revenueYield": 0.13806408304043474,
+      "marketCap": 6897087.371912076,
+      "revenueYield": 0.13776366004431018,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/dextools.ts",
-      "rank": 61
+      "rank": 28
     },
     {
       "id": "canton",
@@ -1364,13 +682,13 @@
       ],
       "revenue30d": 48837125,
       "annualizedRevenue": 594185020.8333334,
-      "marketCap": 4368320529.087034,
-      "revenueYield": 0.13602138782556697,
+      "marketCap": 4407216662.467505,
+      "revenueYield": 0.13482092357598366,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/canton.ts",
-      "rank": 62
+      "rank": 29
     },
     {
       "id": "index-coop",
@@ -1384,13 +702,13 @@
       ],
       "revenue30d": 19580.620000000003,
       "annualizedRevenue": 238230.87666666668,
-      "marketCap": 1799101.9982131624,
-      "revenueYield": 0.13241654831314376,
+      "marketCap": 1799143.5763557418,
+      "revenueYield": 0.1324134881715308,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/index-coop",
-      "rank": 63
+      "rank": 30
     },
     {
       "id": "aethir",
@@ -1402,111 +720,13 @@
       ],
       "revenue30d": 1007105.26,
       "annualizedRevenue": 12253113.996666666,
-      "marketCap": 94043163.2096045,
-      "revenueYield": 0.13029244847237625,
+      "marketCap": 94144808.74743919,
+      "revenueYield": 0.13015177533089375,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/aethir",
-      "rank": 64
-    },
-    {
-      "id": "vesper",
-      "name": "Vesper",
-      "symbol": "VSP",
-      "category": "Yield Aggregator",
-      "chains": [
-        "Ethereum",
-        "Base",
-        "OP Mainnet"
-      ],
-      "revenue30d": 9695.359999999999,
-      "annualizedRevenue": 117960.21333333332,
-      "marketCap": 907759.8642286741,
-      "revenueYield": 0.1299464957437443,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/vesper",
-      "rank": 65
-    },
-    {
-      "id": "zerolend-lending",
-      "name": "ZeroLend Lending",
-      "symbol": "ZERO",
-      "category": "Lending",
-      "chains": [
-        "Base",
-        "Blast",
-        "ZKsync Era",
-        "Zircuit",
-        "Ethereum",
-        "Manta",
-        "Linea",
-        "Corn",
-        "Abstract",
-        "Berachain",
-        "Hemi"
-      ],
-      "revenue30d": 636.0699999999999,
-      "annualizedRevenue": 7738.8516666666665,
-      "marketCap": 60021.076690988055,
-      "revenueYield": 0.12893556885874102,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/aave.ts",
-      "rank": 66
-    },
-    {
-      "id": "javsphere",
-      "name": "Javsphere",
-      "symbol": "JAV",
-      "category": "Derivatives",
-      "chains": [
-        "DefiChain",
-        "Base"
-      ],
-      "revenue30d": 877.6500000000001,
-      "annualizedRevenue": 10678.075000000003,
-      "marketCap": 83292.83465394242,
-      "revenueYield": 0.1281992027809392,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/javsphere",
-      "rank": 67
-    },
-    {
-      "id": "stride",
-      "name": "Stride",
-      "symbol": "STRD",
-      "category": "Liquid Staking",
-      "chains": [
-        "Osmosis",
-        "CosmosHub",
-        "Stargaze",
-        "Juno",
-        "Evmos",
-        "Terra Classic",
-        "Celestia",
-        "dYdX",
-        "Dymension",
-        "Injective",
-        "UX",
-        "Comdex",
-        "HAQQ",
-        "BandChain"
-      ],
-      "revenue30d": 5619,
-      "annualizedRevenue": 68364.5,
-      "marketCap": 566908.6963864033,
-      "revenueYield": 0.12059172920748945,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/stride.ts",
-      "rank": 68
+      "rank": 31
     },
     {
       "id": "solana-name-service",
@@ -1518,13 +738,13 @@
       ],
       "revenue30d": 16463.239999999998,
       "annualizedRevenue": 200302.75333333333,
-      "marketCap": 1678033.6303939023,
-      "revenueYield": 0.11936754407378246,
+      "marketCap": 1680671.8899943377,
+      "revenueYield": 0.11918016510290308,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/sns.ts",
-      "rank": 69
+      "rank": 32
     },
     {
       "id": "stake-dao",
@@ -1536,31 +756,13 @@
       ],
       "revenue30d": 72963.02,
       "annualizedRevenue": 887716.7433333334,
-      "marketCap": 7504077.4808631865,
-      "revenueYield": 0.1182979181114772,
+      "marketCap": 7514723.081602157,
+      "revenueYield": 0.11813033343925564,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/stakedao",
-      "rank": 70
-    },
-    {
-      "id": "orynth",
-      "name": "Orynth",
-      "symbol": "ORY",
-      "category": "Launchpad",
-      "chains": [
-        "Solana"
-      ],
-      "revenue30d": 3669,
-      "annualizedRevenue": 44639.5,
-      "marketCap": 387076.24831076036,
-      "revenueYield": 0.11532482345483935,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/orynth.ts",
-      "rank": 71
+      "rank": 33
     },
     {
       "id": "graphite-protocol",
@@ -1572,13 +774,13 @@
       ],
       "revenue30d": 64412,
       "annualizedRevenue": 783679.3333333334,
-      "marketCap": 7367919.362833546,
-      "revenueYield": 0.10636372288308363,
+      "marketCap": 7246245.943597119,
+      "revenueYield": 0.10814970116019909,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/graphite-protocol",
-      "rank": 72
+      "rank": 34
     },
     {
       "id": "geodnet",
@@ -1591,31 +793,13 @@
       ],
       "revenue30d": 898588,
       "annualizedRevenue": 10932820.666666666,
-      "marketCap": 104494397.29836953,
-      "revenueYield": 0.10462590291276082,
+      "marketCap": 105535906.47137466,
+      "revenueYield": 0.10359337435199897,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/geodnet.ts",
-      "rank": 73
-    },
-    {
-      "id": "kaskad",
-      "name": "Kaskad",
-      "symbol": "KSKD",
-      "category": "Lending",
-      "chains": [
-        "Igra"
-      ],
-      "revenue30d": 630.0699999999999,
-      "annualizedRevenue": 7665.8516666666665,
-      "marketCap": 74670.36757146254,
-      "revenueYield": 0.10266256770907332,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/aave.ts",
-      "rank": 74
+      "rank": 35
     },
     {
       "id": "lido",
@@ -1627,13 +811,13 @@
       ],
       "revenue30d": 2596446,
       "annualizedRevenue": 31590093,
-      "marketCap": 329141552.109854,
-      "revenueYield": 0.09597722559641002,
+      "marketCap": 328286519.6732619,
+      "revenueYield": 0.09622720126138927,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/lido.ts",
-      "rank": 75
+      "rank": 36
     },
     {
       "id": "overtime",
@@ -1648,13 +832,13 @@
       ],
       "revenue30d": 95298,
       "annualizedRevenue": 1159459,
-      "marketCap": 12326385.753291702,
-      "revenueYield": 0.09406317660392642,
+      "marketCap": 12326069.280556547,
+      "revenueYield": 0.09406559168290252,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/thales",
-      "rank": 76
+      "rank": 37
     },
     {
       "id": "p2p.me",
@@ -1667,32 +851,13 @@
       ],
       "revenue30d": 37182,
       "annualizedRevenue": 452381,
-      "marketCap": 5138783.459077093,
-      "revenueYield": 0.08803270338253288,
+      "marketCap": 5138617.059336846,
+      "revenueYield": 0.08803555407539576,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/p2pme",
-      "rank": 77
-    },
-    {
-      "id": "defiplaza",
-      "name": "DefiPlaza",
-      "symbol": "DFP2",
-      "category": "Dexs",
-      "chains": [
-        "Ethereum",
-        "Radix"
-      ],
-      "revenue30d": 426.50000000000006,
-      "annualizedRevenue": 5189.083333333334,
-      "marketCap": 63858.08555860024,
-      "revenueYield": 0.08125961321799259,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/defiplaza",
-      "rank": 78
+      "rank": 38
     },
     {
       "id": "the-index",
@@ -1704,35 +869,13 @@
       ],
       "revenue30d": 373274,
       "annualizedRevenue": 4541500.333333333,
-      "marketCap": 58211879.60179637,
-      "revenueYield": 0.07801672724536429,
+      "marketCap": 59449025.97874534,
+      "revenueYield": 0.076393183211396,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/the-index.ts",
-      "rank": 79
-    },
-    {
-      "id": "nodeops",
-      "name": "NodeOps",
-      "symbol": "NODE",
-      "category": "DePIN",
-      "chains": [
-        "Off Chain",
-        "Arbitrum",
-        "BSC",
-        "Base",
-        "Polygon"
-      ],
-      "revenue30d": 5834,
-      "annualizedRevenue": 70980.33333333333,
-      "marketCap": 946541.642534332,
-      "revenueYield": 0.07498912899731065,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/node-ops.ts",
-      "rank": 80
+      "rank": 39
     },
     {
       "id": "tectonic",
@@ -1744,13 +887,13 @@
       ],
       "revenue30d": 24363.100000000002,
       "annualizedRevenue": 296417.7166666667,
-      "marketCap": 3977964.953374455,
-      "revenueYield": 0.074514914068114,
+      "marketCap": 4002895.3773461226,
+      "revenueYield": 0.07405082789427998,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/tectonic",
-      "rank": 81
+      "rank": 40
     },
     {
       "id": "metaplex",
@@ -1762,49 +905,13 @@
       ],
       "revenue30d": 92399,
       "annualizedRevenue": 1124187.8333333333,
-      "marketCap": 15233409.711418347,
-      "revenueYield": 0.07379751839082274,
+      "marketCap": 15247522.798447171,
+      "revenueYield": 0.0737292115049549,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/metaplex.ts",
-      "rank": 82
-    },
-    {
-      "id": "obol",
-      "name": "Obol",
-      "symbol": "OBOL",
-      "category": "Staking Pool",
-      "chains": [
-        "Ethereum"
-      ],
-      "revenue30d": 4533,
-      "annualizedRevenue": 55151.5,
-      "marketCap": 756204.3743039496,
-      "revenueYield": 0.0729320034028689,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/obol",
-      "rank": 83
-    },
-    {
-      "id": "anoncoin",
-      "name": "Anoncoin",
-      "symbol": "ANONCOIN",
-      "category": "Launchpad",
-      "chains": [
-        "Solana"
-      ],
-      "revenue30d": 11766,
-      "annualizedRevenue": 143153,
-      "marketCap": 1964184.9545929169,
-      "revenueYield": 0.07288162943375609,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/anoncoin",
-      "rank": 84
+      "rank": 41
     },
     {
       "id": "world-liberty-financial",
@@ -1816,13 +923,13 @@
       ],
       "revenue30d": 10508184,
       "annualizedRevenue": 127849572,
-      "marketCap": 1825195594.4361777,
-      "revenueYield": 0.07004705270477825,
+      "marketCap": 1823357417.9985514,
+      "revenueYield": 0.0701176690526956,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/world-liberty-financial",
-      "rank": 85
+      "rank": 42
     },
     {
       "id": "debridge",
@@ -1864,13 +971,31 @@
       ],
       "revenue30d": 504600,
       "annualizedRevenue": 6139300,
-      "marketCap": 88014126.67984001,
-      "revenueYield": 0.06975357515427386,
+      "marketCap": 87671917.09291354,
+      "revenueYield": 0.07002584411943052,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/dln",
-      "rank": 86
+      "rank": 43
+    },
+    {
+      "id": "anoncoin",
+      "name": "Anoncoin",
+      "symbol": "ANONCOIN",
+      "category": "Launchpad",
+      "chains": [
+        "Solana"
+      ],
+      "revenue30d": 11766,
+      "annualizedRevenue": 143153,
+      "marketCap": 2113875.1079460047,
+      "revenueYield": 0.06772065173665719,
+      "marketCapSource": "DeFiLlama",
+      "quality": "Direct match",
+      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/anoncoin",
+      "rank": 44
     },
     {
       "id": "storm-trade",
@@ -1882,13 +1007,13 @@
       ],
       "revenue30d": 7515,
       "annualizedRevenue": 91432.5,
-      "marketCap": 1354052.7712478947,
-      "revenueYield": 0.06752506397201627,
+      "marketCap": 1355831.4666635597,
+      "revenueYield": 0.06743647883095515,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/stormtrade",
-      "rank": 87
+      "rank": 45
     },
     {
       "id": "ssv-network",
@@ -1900,31 +1025,13 @@
       ],
       "revenue30d": 246061,
       "annualizedRevenue": 2993742.1666666665,
-      "marketCap": 44432045.4791688,
-      "revenueYield": 0.06737799564213695,
+      "marketCap": 44771197.18162368,
+      "revenueYield": 0.066867592450609,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/ssv-network.ts",
-      "rank": 88
-    },
-    {
-      "id": "swop",
-      "name": "Swop",
-      "symbol": "SWOP",
-      "category": "Dexs",
-      "chains": [
-        "Waves"
-      ],
-      "revenue30d": 428.78,
-      "annualizedRevenue": 5216.823333333333,
-      "marketCap": 78657.13141208132,
-      "revenueYield": 0.06632358998706195,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/swop",
-      "rank": 89
+      "rank": 46
     },
     {
       "id": "convex-finance",
@@ -1936,13 +1043,13 @@
       ],
       "revenue30d": 1161577,
       "annualizedRevenue": 14132520.166666666,
-      "marketCap": 216563807.16275576,
-      "revenueYield": 0.06525799648528322,
+      "marketCap": 216960001.1367942,
+      "revenueYield": 0.06513882786051449,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/convex.ts",
-      "rank": 90
+      "rank": 47
     },
     {
       "id": "jupiter-aggregator",
@@ -1954,31 +1061,13 @@
       ],
       "revenue30d": 3525022,
       "annualizedRevenue": 42887767.666666664,
-      "marketCap": 735247268.6950827,
-      "revenueYield": 0.058331080566656035,
+      "marketCap": 734544660.8221712,
+      "revenueYield": 0.05838687550824024,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/jupiter.ts",
-      "rank": 91
-    },
-    {
-      "id": "doubleup",
-      "name": "DoubleUp",
-      "symbol": "UP",
-      "category": "Luck Games",
-      "chains": [
-        "Sui"
-      ],
-      "revenue30d": 365.31000000000006,
-      "annualizedRevenue": 4444.6050000000005,
-      "marketCap": 76525.05484966766,
-      "revenueYield": 0.058080389602220624,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/pumpup.ts",
-      "rank": 92
+      "rank": 48
     },
     {
       "id": "opinion",
@@ -1990,13 +1079,13 @@
       ],
       "revenue30d": 45934,
       "annualizedRevenue": 558863.6666666666,
-      "marketCap": 10152873.044266984,
-      "revenueYield": 0.05504487884660784,
+      "marketCap": 10146525.226391999,
+      "revenueYield": 0.055079315745750416,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/opinion",
-      "rank": 93
+      "rank": 49
     },
     {
       "id": "leverup",
@@ -2008,31 +1097,13 @@
       ],
       "revenue30d": 26014,
       "annualizedRevenue": 316503.6666666667,
-      "marketCap": 6107969.449512782,
-      "revenueYield": 0.05181814828689319,
+      "marketCap": 6146438.134168192,
+      "revenueYield": 0.05149383427569465,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/leverup",
-      "rank": 94
-    },
-    {
-      "id": "yield-yak-aggregator",
-      "name": "Yield Yak Aggregator",
-      "symbol": "YAK",
-      "category": "Yield Aggregator",
-      "chains": [
-        "Avalanche"
-      ],
-      "revenue30d": 2658.03,
-      "annualizedRevenue": 32339.365,
-      "marketCap": 641630.7578629602,
-      "revenueYield": 0.05040183096538377,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/yield-yak-staked-avax.ts",
-      "rank": 95
+      "rank": 50
     },
     {
       "id": "hivemapper",
@@ -2044,13 +1115,13 @@
       ],
       "revenue30d": 38306.33,
       "annualizedRevenue": 466060.3483333334,
-      "marketCap": 9312472.179007607,
-      "revenueYield": 0.05004689832888173,
+      "marketCap": 9453763.365809927,
+      "revenueYield": 0.04929892258768261,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/hivemapper",
-      "rank": 96
+      "rank": 51
     },
     {
       "id": "xexchange",
@@ -2062,36 +1133,13 @@
       ],
       "revenue30d": 6828,
       "annualizedRevenue": 83074,
-      "marketCap": 1662167.5237104816,
-      "revenueYield": 0.049979318459160274,
+      "marketCap": 1689973.680327967,
+      "revenueYield": 0.049156978577251056,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/xexchange",
-      "rank": 97
-    },
-    {
-      "id": "kiloex",
-      "name": "KiloEx",
-      "symbol": "KILO",
-      "category": "Derivatives",
-      "chains": [
-        "BSC",
-        "opBNB",
-        "Manta",
-        "Taiko",
-        "BSquared",
-        "Base"
-      ],
-      "revenue30d": 2679.13,
-      "annualizedRevenue": 32596.08166666667,
-      "marketCap": 667501.523481093,
-      "revenueYield": 0.048832969693723784,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/kiloex",
-      "rank": 98
+      "rank": 52
     },
     {
       "id": "infrared-finance",
@@ -2103,13 +1151,31 @@
       ],
       "revenue30d": 6357,
       "annualizedRevenue": 77343.5,
-      "marketCap": 1601168.9740106037,
-      "revenueYield": 0.048304395885382545,
+      "marketCap": 1604487.4256460823,
+      "revenueYield": 0.04820449120619062,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/infrared-finance.ts",
-      "rank": 99
+      "rank": 53
+    },
+    {
+      "id": "aquarius-stellar",
+      "name": "Aquarius Stellar",
+      "symbol": "AQUA",
+      "category": "Dexs",
+      "chains": [
+        "Stellar"
+      ],
+      "revenue30d": 55703,
+      "annualizedRevenue": 677719.8333333334,
+      "marketCap": 14493500.654698342,
+      "revenueYield": 0.04676025823434435,
+      "marketCapSource": "DeFiLlama",
+      "quality": "Direct match",
+      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/aqua-network",
+      "rank": 54
     },
     {
       "id": "kaio",
@@ -2131,13 +1197,13 @@
       ],
       "revenue30d": 43614,
       "annualizedRevenue": 530637,
-      "marketCap": 11569692.366357852,
-      "revenueYield": 0.04586440012380769,
+      "marketCap": 11350176.635329757,
+      "revenueYield": 0.046751431017230456,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/kaio",
-      "rank": 100
+      "rank": 55
     },
     {
       "id": "veno-finance",
@@ -2150,13 +1216,13 @@
       ],
       "revenue30d": 6681.49,
       "annualizedRevenue": 81291.46166666667,
-      "marketCap": 1821942.7639546266,
-      "revenueYield": 0.044618010661443115,
+      "marketCap": 1833532.3213045239,
+      "revenueYield": 0.04433598509396841,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/veno-finance.ts",
-      "rank": 101
+      "rank": 56
     },
     {
       "id": "zyfai",
@@ -2169,31 +1235,13 @@
       ],
       "revenue30d": 5877.610000000001,
       "annualizedRevenue": 71510.92166666668,
-      "marketCap": 1607037.471570206,
-      "revenueYield": 0.044498602510366296,
+      "marketCap": 1617300.643238445,
+      "revenueYield": 0.04421622038279468,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/zyfai.ts",
-      "rank": 102
-    },
-    {
-      "id": "aquarius-stellar",
-      "name": "Aquarius Stellar",
-      "symbol": "AQUA",
-      "category": "Dexs",
-      "chains": [
-        "Stellar"
-      ],
-      "revenue30d": 55703,
-      "annualizedRevenue": 677719.8333333334,
-      "marketCap": 15509907.794496614,
-      "revenueYield": 0.04369592922878684,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/aqua-network",
-      "rank": 103
+      "rank": 57
     },
     {
       "id": "tree-news",
@@ -2207,13 +1255,13 @@
       ],
       "revenue30d": 57519,
       "annualizedRevenue": 699814.5,
-      "marketCap": 16245894.2831425,
-      "revenueYield": 0.04307639135176204,
+      "marketCap": 16301344.674286457,
+      "revenueYield": 0.042929863393654816,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/tree-news",
-      "rank": 104
+      "rank": 58
     },
     {
       "id": "liqwid",
@@ -2225,49 +1273,13 @@
       ],
       "revenue30d": 16151,
       "annualizedRevenue": 196503.83333333334,
-      "marketCap": 4601239.4487147005,
-      "revenueYield": 0.04270671751026221,
+      "marketCap": 4610981.973275383,
+      "revenueYield": 0.04261648266513348,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/liqwid",
-      "rank": 105
-    },
-    {
-      "id": "kintara",
-      "name": "Kintara",
-      "symbol": "KINS",
-      "category": "Gaming",
-      "chains": [
-        "Solana"
-      ],
-      "revenue30d": 3925,
-      "annualizedRevenue": 47754.166666666664,
-      "marketCap": 1138904.3429222608,
-      "revenueYield": 0.04192991884124044,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/kintara",
-      "rank": 106
-    },
-    {
-      "id": "hermes-v2",
-      "name": "Hermes V2",
-      "symbol": "HERMES",
-      "category": "Yield",
-      "chains": [
-        "Arbitrum"
-      ],
-      "revenue30d": 83.28000000000002,
-      "annualizedRevenue": 1013.2400000000001,
-      "marketCap": 24362.0801818472,
-      "revenueYield": 0.04159086549411289,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/hermes-v2",
-      "rank": 107
+      "rank": 59
     },
     {
       "id": "creator-bid",
@@ -2279,49 +1291,31 @@
       ],
       "revenue30d": 8277.71,
       "annualizedRevenue": 100712.13833333334,
-      "marketCap": 2515650.1145480117,
-      "revenueYield": 0.0400342391618432,
+      "marketCap": 2515814.3532746285,
+      "revenueYield": 0.040031625625414145,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/creator-bid.ts",
-      "rank": 108
+      "rank": 60
     },
     {
-      "id": "haystack",
-      "name": "Haystack",
-      "symbol": "HAY",
-      "category": "Trading App",
+      "id": "kintara",
+      "name": "Kintara",
+      "symbol": "KINS",
+      "category": "Gaming",
       "chains": [
-        "Algorand"
+        "Solana"
       ],
-      "revenue30d": 558.3100000000001,
-      "annualizedRevenue": 6792.771666666667,
-      "marketCap": 181956.69476733767,
-      "revenueYield": 0.037331804006180545,
+      "revenue30d": 3925,
+      "annualizedRevenue": 47754.166666666664,
+      "marketCap": 1244057.909636302,
+      "revenueYield": 0.038385806879864225,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/haystack",
-      "rank": 109
-    },
-    {
-      "id": "lets-get-hai",
-      "name": "Lets Get HAI",
-      "symbol": "KITE",
-      "category": "CDP",
-      "chains": [
-        "OP Mainnet"
-      ],
-      "revenue30d": 1252.59,
-      "annualizedRevenue": 15239.845,
-      "marketCap": 428614.78811884637,
-      "revenueYield": 0.035556041047688475,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/lets-get-hai.ts",
-      "rank": 110
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/kintara",
+      "rank": 61
     },
     {
       "id": "humidifi",
@@ -2333,13 +1327,13 @@
       ],
       "revenue30d": 40199.25,
       "annualizedRevenue": 489090.875,
-      "marketCap": 14286205.812827308,
-      "revenueYield": 0.034235183323542404,
+      "marketCap": 14240100.960342223,
+      "revenueYield": 0.0343460258015085,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/humidifi.ts",
-      "rank": 111
+      "rank": 62
     },
     {
       "id": "foxify",
@@ -2351,31 +1345,13 @@
       ],
       "revenue30d": 7722,
       "annualizedRevenue": 93951,
-      "marketCap": 2760678.683846516,
-      "revenueYield": 0.03403184896153722,
+      "marketCap": 2783242.32678052,
+      "revenueYield": 0.03375595401665101,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/foxify",
-      "rank": 112
-    },
-    {
-      "id": "basisos",
-      "name": "BasisOS",
-      "symbol": "BIOS",
-      "category": "Basis Trading",
-      "chains": [
-        "Arbitrum"
-      ],
-      "revenue30d": 71.68,
-      "annualizedRevenue": 872.1066666666667,
-      "marketCap": 26052.53236329054,
-      "revenueYield": 0.03347492882862755,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/basisos",
-      "rank": 113
+      "rank": 63
     },
     {
       "id": "stader",
@@ -2389,13 +1365,13 @@
       ],
       "revenue30d": 23018,
       "annualizedRevenue": 280052.3333333333,
-      "marketCap": 8538696.11249828,
-      "revenueYield": 0.032798020873867906,
+      "marketCap": 8549857.794331735,
+      "revenueYield": 0.03275520366186657,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/stader.ts",
-      "rank": 114
+      "rank": 64
     },
     {
       "id": "ekubo",
@@ -2409,13 +1385,13 @@
       ],
       "revenue30d": 12766.45,
       "annualizedRevenue": 155325.14166666666,
-      "marketCap": 4870064.060235122,
-      "revenueYield": 0.031893860069505474,
+      "marketCap": 4859518.953435411,
+      "revenueYield": 0.03196306942209998,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/ekubo",
-      "rank": 115
+      "rank": 65
     },
     {
       "id": "benqi-lending",
@@ -2427,13 +1403,13 @@
       ],
       "revenue30d": 24063,
       "annualizedRevenue": 292766.5,
-      "marketCap": 9183490.387066044,
-      "revenueYield": 0.03187965442990282,
+      "marketCap": 9198726.812215239,
+      "revenueYield": 0.03182685016922423,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/factory/compoundV2.ts",
-      "rank": 116
+      "rank": 66
     },
     {
       "id": "railgun",
@@ -2448,13 +1424,13 @@
       ],
       "revenue30d": 305729,
       "annualizedRevenue": 3719702.8333333335,
-      "marketCap": 122352746.18690467,
-      "revenueYield": 0.0304014658375641,
+      "marketCap": 122104096.6073083,
+      "revenueYield": 0.030463374585179136,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/railgun.ts",
-      "rank": 117
+      "rank": 67
     },
     {
       "id": "pinksale",
@@ -2479,25 +1455,7 @@
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/pinksale",
-      "rank": 118
-    },
-    {
-      "id": "ferro",
-      "name": "Ferro",
-      "symbol": "FER",
-      "category": "Dexs",
-      "chains": [
-        "Cronos"
-      ],
-      "revenue30d": 939,
-      "annualizedRevenue": 11424.5,
-      "marketCap": 409740.72610081383,
-      "revenueYield": 0.02788226620457807,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/ferro.ts",
-      "rank": 119
+      "rank": 68
     },
     {
       "id": "morpheusai",
@@ -2510,13 +1468,13 @@
       ],
       "revenue30d": 38042,
       "annualizedRevenue": 462844.3333333333,
-      "marketCap": 16885459.452987246,
-      "revenueYield": 0.027410822585076322,
+      "marketCap": 16906965.9084055,
+      "revenueYield": 0.027375954730187554,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/morpheus-ai.ts",
-      "rank": 120
+      "rank": 69
     },
     {
       "id": "ston.fi",
@@ -2528,13 +1486,13 @@
       ],
       "revenue30d": 68452,
       "annualizedRevenue": 832832.6666666666,
-      "marketCap": 30770047.382982872,
-      "revenueYield": 0.027066343327350806,
+      "marketCap": 30793374.758684125,
+      "revenueYield": 0.027045839346718475,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/ston",
-      "rank": 121
+      "rank": 70
     },
     {
       "id": "avici",
@@ -2546,31 +1504,13 @@
       ],
       "revenue30d": 8464,
       "annualizedRevenue": 102978.66666666667,
-      "marketCap": 4076110.2149593635,
-      "revenueYield": 0.02526395539765681,
+      "marketCap": 4071090.9264111044,
+      "revenueYield": 0.02529510357987709,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/avici.ts",
-      "rank": 122
-    },
-    {
-      "id": "gt3",
-      "name": "GT3",
-      "symbol": "GT3",
-      "category": "Dexs",
-      "chains": [
-        "Polygon"
-      ],
-      "revenue30d": 1867.84,
-      "annualizedRevenue": 22725.386666666665,
-      "marketCap": 940782.9921709059,
-      "revenueYield": 0.02415582217768058,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/gt3.ts",
-      "rank": 123
+      "rank": 71
     },
     {
       "id": "layer3",
@@ -2597,13 +1537,31 @@
       ],
       "revenue30d": 12932,
       "annualizedRevenue": 157339.33333333334,
-      "marketCap": 6922640.798304308,
-      "revenueYield": 0.022728224375280805,
+      "marketCap": 6905410.8817572445,
+      "revenueYield": 0.022784934311293963,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/layer3",
-      "rank": 124
+      "rank": 72
+    },
+    {
+      "id": "enzyme-finance",
+      "name": "Enzyme Finance",
+      "symbol": "MLN",
+      "category": "Indexes",
+      "chains": [
+        "Ethereum"
+      ],
+      "revenue30d": 8556.03,
+      "annualizedRevenue": 104098.365,
+      "marketCap": 4778235.926899656,
+      "revenueYield": 0.02178594079333038,
+      "marketCapSource": "DeFiLlama",
+      "quality": "Direct match",
+      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/enzyme",
+      "rank": 73
     },
     {
       "id": "maya-protocol",
@@ -2621,7 +1579,7 @@
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/mayachain.ts",
-      "rank": 125
+      "rank": 74
     },
     {
       "id": "vader-ai",
@@ -2633,49 +1591,13 @@
       ],
       "revenue30d": 1924.2,
       "annualizedRevenue": 23411.1,
-      "marketCap": 1101917.7415651423,
-      "revenueYield": 0.02124577826176692,
+      "marketCap": 1099663.7371562435,
+      "revenueYield": 0.021289326190333108,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/vader-ai.ts",
-      "rank": 126
-    },
-    {
-      "id": "enzyme-finance",
-      "name": "Enzyme Finance",
-      "symbol": "MLN",
-      "category": "Indexes",
-      "chains": [
-        "Ethereum"
-      ],
-      "revenue30d": 8556.03,
-      "annualizedRevenue": 104098.365,
-      "marketCap": 5018801.3134686025,
-      "revenueYield": 0.020741678838857115,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/enzyme",
-      "rank": 127
-    },
-    {
-      "id": "saber",
-      "name": "Saber",
-      "symbol": "SBR",
-      "category": "Dexs",
-      "chains": [
-        "Solana"
-      ],
-      "revenue30d": 420,
-      "annualizedRevenue": 5110,
-      "marketCap": 249725.30930883935,
-      "revenueYield": 0.020462483414848354,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/saber",
-      "rank": 128
+      "rank": 75
     },
     {
       "id": "usd-ai",
@@ -2687,13 +1609,13 @@
       ],
       "revenue30d": 190037.09,
       "annualizedRevenue": 2312117.928333333,
-      "marketCap": 113444265.78496373,
-      "revenueYield": 0.020381091211044613,
+      "marketCap": 111093185.39124146,
+      "revenueYield": 0.02081241905334384,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/usdai",
-      "rank": 129
+      "rank": 76
     },
     {
       "id": "hamilton-lane-senior-credit-opportunities-securitize-fund",
@@ -2708,13 +1630,13 @@
       ],
       "revenue30d": 7084,
       "annualizedRevenue": 86188.66666666667,
-      "marketCap": 4284488.767432599,
-      "revenueYield": 0.0201164412710816,
+      "marketCap": 4282619.017138017,
+      "revenueYield": 0.02012522391596363,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/hlscope",
-      "rank": 130
+      "rank": 77
     },
     {
       "id": "openledger",
@@ -2726,13 +1648,13 @@
       ],
       "revenue30d": 41601,
       "annualizedRevenue": 506145.5,
-      "marketCap": 25700650.935607802,
-      "revenueYield": 0.019693878620745137,
+      "marketCap": 25645514.589282025,
+      "revenueYield": 0.01973621930017861,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/openledger",
-      "rank": 131
+      "rank": 78
     },
     {
       "id": "waterneuron",
@@ -2744,13 +1666,13 @@
       ],
       "revenue30d": 2121,
       "annualizedRevenue": 25805.5,
-      "marketCap": 1327928.5145261046,
-      "revenueYield": 0.0194328984713527,
+      "marketCap": 1328186.2122593361,
+      "revenueYield": 0.01942912805584924,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/waterneuron.ts",
-      "rank": 132
+      "rank": 79
     },
     {
       "id": "renzo",
@@ -2762,13 +1684,13 @@
       ],
       "revenue30d": 41071,
       "annualizedRevenue": 499697.1666666667,
-      "marketCap": 26626356.257515002,
-      "revenueYield": 0.018767012723554036,
+      "marketCap": 26652875.470590908,
+      "revenueYield": 0.018748339826148902,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/renzo",
-      "rank": 133
+      "rank": 80
     },
     {
       "id": "virtuals-protocol",
@@ -2783,13 +1705,13 @@
       ],
       "revenue30d": 669746,
       "annualizedRevenue": 8148576.333333333,
-      "marketCap": 451390926.4289169,
-      "revenueYield": 0.018052149159928973,
+      "marketCap": 450439271.8976739,
+      "revenueYield": 0.018090288395600732,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/virtual-protocol.ts",
-      "rank": 134
+      "rank": 81
     },
     {
       "id": "ens",
@@ -2801,13 +1723,13 @@
       ],
       "revenue30d": 353983,
       "annualizedRevenue": 4306793.166666667,
-      "marketCap": 251164647.85660726,
-      "revenueYield": 0.01714729044640655,
+      "marketCap": 250983480.68124634,
+      "revenueYield": 0.01715966785932168,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/ens.ts",
-      "rank": 135
+      "rank": 82
     },
     {
       "id": "migrate.fun",
@@ -2820,13 +1742,13 @@
       ],
       "revenue30d": 6299.11,
       "annualizedRevenue": 76639.17166666666,
-      "marketCap": 4535315.74224544,
-      "revenueYield": 0.01689831006754174,
+      "marketCap": 4530485.298340147,
+      "revenueYield": 0.016916327196723334,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/migrate-fun",
-      "rank": 136
+      "rank": 83
     },
     {
       "id": "osmosis-dex",
@@ -2839,13 +1761,13 @@
       ],
       "revenue30d": 35730,
       "annualizedRevenue": 434715,
-      "marketCap": 27720312.259407107,
-      "revenueYield": 0.015682182651188425,
+      "marketCap": 27496800.565608326,
+      "revenueYield": 0.015809657525891235,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/osmosis.ts",
-      "rank": 137
+      "rank": 84
     },
     {
       "id": "goldfinch",
@@ -2857,13 +1779,13 @@
       ],
       "revenue30d": 3557.83,
       "annualizedRevenue": 43286.931666666664,
-      "marketCap": 2870128.392943701,
-      "revenueYield": 0.015081879881432803,
+      "marketCap": 2880162.5624464024,
+      "revenueYield": 0.015029336271178686,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/goldfinch.ts",
-      "rank": 138
+      "rank": 85
     },
     {
       "id": "vultisig",
@@ -2876,31 +1798,13 @@
       ],
       "revenue30d": 6441.889999999999,
       "annualizedRevenue": 78376.32833333332,
-      "marketCap": 5507600.973423533,
-      "revenueYield": 0.01423057492936248,
+      "marketCap": 5507058.184688566,
+      "revenueYield": 0.014231977528627772,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/vultisig",
-      "rank": 139
-    },
-    {
-      "id": "america.fun",
-      "name": "America.Fun",
-      "symbol": "AOL",
-      "category": "Launchpad",
-      "chains": [
-        "Solana"
-      ],
-      "revenue30d": 1017.22,
-      "annualizedRevenue": 12376.176666666666,
-      "marketCap": 886179.3828112333,
-      "revenueYield": 0.013965769128374023,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/americafun.ts",
-      "rank": 140
+      "rank": 86
     },
     {
       "id": "sofa.org",
@@ -2916,13 +1820,13 @@
       ],
       "revenue30d": 4599.64,
       "annualizedRevenue": 55962.28666666667,
-      "marketCap": 4300806.028455162,
-      "revenueYield": 0.013012046183065867,
+      "marketCap": 4306960.400640134,
+      "revenueYield": 0.012993452797557441,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/sofa-org",
-      "rank": 141
+      "rank": 87
     },
     {
       "id": "livepeer",
@@ -2934,32 +1838,13 @@
       ],
       "revenue30d": 70722,
       "annualizedRevenue": 860451,
-      "marketCap": 70637541.7477843,
-      "revenueYield": 0.012181213823554242,
+      "marketCap": 70836690.51998048,
+      "revenueYield": 0.012146967816873062,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/livepeer",
-      "rank": 142
-    },
-    {
-      "id": "infinite-trading-protocol",
-      "name": "Infinite Trading Protocol",
-      "symbol": "ITP",
-      "category": "AI Agents",
-      "chains": [
-        "Base",
-        "OP Mainnet"
-      ],
-      "revenue30d": 20.819999999999997,
-      "annualizedRevenue": 253.30999999999995,
-      "marketCap": 20962.377777244274,
-      "revenueYield": 0.012084029907856198,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/infinite",
-      "rank": 143
+      "rank": 88
     },
     {
       "id": "hyperlane",
@@ -2984,13 +1869,13 @@
       ],
       "revenue30d": 20583,
       "annualizedRevenue": 250426.5,
-      "marketCap": 22576678.012222495,
-      "revenueYield": 0.011092265206795475,
+      "marketCap": 22484432.47190307,
+      "revenueYield": 0.01113777278180969,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/hyperlane.ts",
-      "rank": 144
+      "rank": 89
     },
     {
       "id": "rarible",
@@ -3003,13 +1888,13 @@
       ],
       "revenue30d": 1889.0700000000002,
       "annualizedRevenue": 22983.685,
-      "marketCap": 2122178.2158682533,
-      "revenueYield": 0.010830233214224478,
+      "marketCap": 2126856.219843486,
+      "revenueYield": 0.010806412199171299,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/rarible",
-      "rank": 145
+      "rank": 90
     },
     {
       "id": "monad",
@@ -3021,13 +1906,13 @@
       ],
       "revenue30d": 286525,
       "annualizedRevenue": 3486054.1666666665,
-      "marketCap": 322950828.182952,
-      "revenueYield": 0.010794380637698235,
+      "marketCap": 322746811.20379704,
+      "revenueYield": 0.01080120405733587,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/monad",
-      "rank": 146
+      "rank": 91
     },
     {
       "id": "venice",
@@ -3039,13 +1924,13 @@
       ],
       "revenue30d": 714390,
       "annualizedRevenue": 8691745,
-      "marketCap": 817492963.8921344,
-      "revenueYield": 0.010632195485350805,
+      "marketCap": 816148602.15313,
+      "revenueYield": 0.010649708860702317,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/venice",
-      "rank": 147
+      "rank": 92
     },
     {
       "id": "gearbox",
@@ -3064,13 +1949,13 @@
       ],
       "revenue30d": 3643.8100000000004,
       "annualizedRevenue": 44333.021666666675,
-      "marketCap": 4460990.7449703785,
-      "revenueYield": 0.009937931773709845,
+      "marketCap": 4443711.730662202,
+      "revenueYield": 0.00997657461908767,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/gearbox",
-      "rank": 148
+      "rank": 93
     },
     {
       "id": "tron",
@@ -3082,52 +1967,13 @@
       ],
       "revenue30d": 25496851,
       "annualizedRevenue": 310211687.1666667,
-      "marketCap": 31229985521.757423,
-      "revenueYield": 0.009933135798303436,
+      "marketCap": 31286177672.355507,
+      "revenueYield": 0.009915295195704587,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/tron.ts",
-      "rank": 149
-    },
-    {
-      "id": "colend-protocol",
-      "name": "Colend Protocol",
-      "symbol": "CLND",
-      "category": "Lending",
-      "chains": [
-        "CORE"
-      ],
-      "revenue30d": 95.45,
-      "annualizedRevenue": 1161.3083333333334,
-      "marketCap": 117321.14621989586,
-      "revenueYield": 0.009898542340838411,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/aave.ts",
-      "rank": 150
-    },
-    {
-      "id": "rubicon",
-      "name": "Rubicon",
-      "symbol": "RUBI",
-      "category": "Dexs",
-      "chains": [
-        "Ethereum",
-        "OP Mainnet",
-        "Arbitrum",
-        "Base"
-      ],
-      "revenue30d": 104.42999999999999,
-      "annualizedRevenue": 1270.5649999999998,
-      "marketCap": 130438.64608538483,
-      "revenueYield": 0.009740709813626024,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/rubicon",
-      "rank": 151
+      "rank": 94
     },
     {
       "id": "alex",
@@ -3139,31 +1985,13 @@
       ],
       "revenue30d": 2730.3199999999997,
       "annualizedRevenue": 33218.89333333333,
-      "marketCap": 3490569.831045163,
-      "revenueYield": 0.009516753693876617,
+      "marketCap": 3491091.258499221,
+      "revenueYield": 0.009515332276823307,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/alex",
-      "rank": 152
-    },
-    {
-      "id": "netswap",
-      "name": "NetSwap",
-      "symbol": "NETT",
-      "category": "Dexs",
-      "chains": [
-        "Metis"
-      ],
-      "revenue30d": 506,
-      "annualizedRevenue": 6156.333333333333,
-      "marketCap": 660742.0080776954,
-      "revenueYield": 0.00931730275670534,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/factory/uniV2.ts",
-      "rank": 153
+      "rank": 95
     },
     {
       "id": "treehouse-protocol",
@@ -3176,13 +2004,13 @@
       ],
       "revenue30d": 4698.57,
       "annualizedRevenue": 57165.93499999999,
-      "marketCap": 6437005.125003139,
-      "revenueYield": 0.008880827945584728,
+      "marketCap": 6431699.004409051,
+      "revenueYield": 0.00888815458571859,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/treehouse-protocol",
-      "rank": 154
+      "rank": 96
     },
     {
       "id": "axie-infinity",
@@ -3195,13 +2023,13 @@
       ],
       "revenue30d": 116858,
       "annualizedRevenue": 1421772.3333333333,
-      "marketCap": 164602335.626108,
-      "revenueYield": 0.008637619435503455,
+      "marketCap": 164394009.50551543,
+      "revenueYield": 0.008648565343773264,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/axie-infinity",
-      "rank": 155
+      "rank": 97
     },
     {
       "id": "safe",
@@ -3213,13 +2041,13 @@
       ],
       "revenue30d": 50242,
       "annualizedRevenue": 611277.6666666666,
-      "marketCap": 73554682.10024261,
-      "revenueYield": 0.008310520135667208,
+      "marketCap": 73583321.35697445,
+      "revenueYield": 0.008307285610297175,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/safe.ts",
-      "rank": 156
+      "rank": 98
     },
     {
       "id": "banana-gun",
@@ -3237,13 +2065,13 @@
       ],
       "revenue30d": 10608,
       "annualizedRevenue": 129064,
-      "marketCap": 15736562.127384458,
-      "revenueYield": 0.008201537219835669,
+      "marketCap": 15641245.643531399,
+      "revenueYield": 0.008251516723246128,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/banana-gun-trading.ts",
-      "rank": 157
+      "rank": 99
     },
     {
       "id": "liquidium",
@@ -3255,13 +2083,13 @@
       ],
       "revenue30d": 696.46,
       "annualizedRevenue": 8473.596666666668,
-      "marketCap": 1036790.293224458,
-      "revenueYield": 0.008172912807963754,
+      "marketCap": 1036793.5122255551,
+      "revenueYield": 0.008172887432983118,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/liquidium",
-      "rank": 158
+      "rank": 100
     },
     {
       "id": "thorchain-dex",
@@ -3286,67 +2114,13 @@
       ],
       "revenue30d": 106302.47,
       "annualizedRevenue": 1293346.7183333333,
-      "marketCap": 160432042.61121076,
-      "revenueYield": 0.008061648391946336,
+      "marketCap": 160271816.0254882,
+      "revenueYield": 0.008069707765260805,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/thorchain-dex",
-      "rank": 159
-    },
-    {
-      "id": "adrena-protocol",
-      "name": "Adrena Protocol",
-      "symbol": "ADX",
-      "category": "Derivatives",
-      "chains": [
-        "Solana"
-      ],
-      "revenue30d": 27.97,
-      "annualizedRevenue": 340.3016666666666,
-      "marketCap": 43433.503485128786,
-      "revenueYield": 0.007835003841750473,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/adrena",
-      "rank": 160
-    },
-    {
-      "id": "bulla-exchange",
-      "name": "Bulla Exchange",
-      "symbol": "BULLA",
-      "category": "Dexs",
-      "chains": [
-        "Berachain"
-      ],
-      "revenue30d": 6.74,
-      "annualizedRevenue": 82.00333333333333,
-      "marketCap": 10519.601811284021,
-      "revenueYield": 0.007795288719518939,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/bullaexchange",
-      "rank": 161
-    },
-    {
-      "id": "sperax-usd",
-      "name": "Sperax USD",
-      "symbol": "SPA",
-      "category": "Yield Aggregator",
-      "chains": [
-        "Arbitrum"
-      ],
-      "revenue30d": 319.93,
-      "annualizedRevenue": 3892.4816666666666,
-      "marketCap": 515226.61410993006,
-      "revenueYield": 0.007554892468804333,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/sperax-usd",
-      "rank": 162
+      "rank": 101
     },
     {
       "id": "mainstreet",
@@ -3364,25 +2138,7 @@
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/mainstreet",
-      "rank": 163
-    },
-    {
-      "id": "almanak",
-      "name": "Almanak",
-      "symbol": "ALMANAK",
-      "category": "Onchain Capital Allocator",
-      "chains": [
-        "Ethereum"
-      ],
-      "revenue30d": 279.97999999999996,
-      "annualizedRevenue": 3406.4233333333327,
-      "marketCap": 498839.5590438668,
-      "revenueYield": 0.006828695261984584,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/almanak",
-      "rank": 164
+      "rank": 102
     },
     {
       "id": "olympus-dao",
@@ -3397,13 +2153,13 @@
       ],
       "revenue30d": 158379,
       "annualizedRevenue": 1926944.5,
-      "marketCap": 301761205.1447295,
-      "revenueYield": 0.006385660141686559,
+      "marketCap": 301880801.4170615,
+      "revenueYield": 0.006383130331424561,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/olympus-dao.ts",
-      "rank": 165
+      "rank": 103
     },
     {
       "id": "trueo",
@@ -3415,13 +2171,13 @@
       ],
       "revenue30d": 804.69,
       "annualizedRevenue": 9790.395,
-      "marketCap": 1609949.3952921692,
-      "revenueYield": 0.006081181823869232,
+      "marketCap": 1608753.2157079547,
+      "revenueYield": 0.006085703453087799,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/truemarkets.ts",
-      "rank": 166
+      "rank": 104
     },
     {
       "id": "wrapped-hlp",
@@ -3439,7 +2195,7 @@
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/wrapped-hlp",
-      "rank": 167
+      "rank": 105
     },
     {
       "id": "nexus-mutual",
@@ -3451,13 +2207,13 @@
       ],
       "revenue30d": 53112.09,
       "annualizedRevenue": 646197.095,
-      "marketCap": 108807009.54542659,
-      "revenueYield": 0.005938928913676418,
+      "marketCap": 108943959.95773366,
+      "revenueYield": 0.005931463251847108,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/nexus-mutual.ts",
-      "rank": 168
+      "rank": 106
     },
     {
       "id": "penpie",
@@ -3471,67 +2227,13 @@
       ],
       "revenue30d": 933.86,
       "annualizedRevenue": 11361.963333333335,
-      "marketCap": 1952784.348785281,
-      "revenueYield": 0.0058183400232601126,
+      "marketCap": 1952797.1462583651,
+      "revenueYield": 0.005818301893314058,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/penpie.ts",
-      "rank": 169
-    },
-    {
-      "id": "sakefinance",
-      "name": "SakeFinance",
-      "symbol": "SONE",
-      "category": "Lending",
-      "chains": [
-        "Soneium"
-      ],
-      "revenue30d": 230.97000000000003,
-      "annualizedRevenue": 2810.135,
-      "marketCap": 486676.29633006296,
-      "revenueYield": 0.005774135747293868,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/aave.ts",
-      "rank": 170
-    },
-    {
-      "id": "sable-finance",
-      "name": "Sable Finance",
-      "symbol": "SABLE",
-      "category": "CDP",
-      "chains": [
-        "BSC"
-      ],
-      "revenue30d": 30.33,
-      "annualizedRevenue": 369.015,
-      "marketCap": 70215.54127486987,
-      "revenueYield": 0.005255460447928931,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/liquity.ts",
-      "rank": 171
-    },
-    {
-      "id": "amnis-finance",
-      "name": "Amnis Finance",
-      "symbol": "AMI",
-      "category": "Liquid Staking",
-      "chains": [
-        "Aptos"
-      ],
-      "revenue30d": 194.78,
-      "annualizedRevenue": 2369.8233333333333,
-      "marketCap": 453806.8778319614,
-      "revenueYield": 0.005222096554937731,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/amnis-finance",
-      "rank": 172
+      "rank": 107
     },
     {
       "id": "hydration-dex",
@@ -3543,40 +2245,13 @@
       ],
       "revenue30d": 21061,
       "annualizedRevenue": 256242.16666666666,
-      "marketCap": 49883787.78150748,
-      "revenueYield": 0.005136782471070866,
+      "marketCap": 49971099.4805567,
+      "revenueYield": 0.005127807259201254,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/hydration-dex",
-      "rank": 173
-    },
-    {
-      "id": "wombat-exchange",
-      "name": "Wombat Exchange",
-      "symbol": "WOM",
-      "category": "Dexs",
-      "chains": [
-        "BSC",
-        "Arbitrum",
-        "Ethereum",
-        "Scroll",
-        "Avalanche",
-        "Base",
-        "OP Mainnet",
-        "Hyperliquid L1",
-        "Polygon",
-        "Monad"
-      ],
-      "revenue30d": 42.71999999999999,
-      "annualizedRevenue": 519.7599999999999,
-      "marketCap": 101878.26396413642,
-      "revenueYield": 0.005101775194981412,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/wombat-exchange",
-      "rank": 174
+      "rank": 108
     },
     {
       "id": "looped-hype",
@@ -3588,13 +2263,13 @@
       ],
       "revenue30d": 4196,
       "annualizedRevenue": 51051.333333333336,
-      "marketCap": 10031517.722974,
-      "revenueYield": 0.005089093668888856,
+      "marketCap": 10041996.29024868,
+      "revenueYield": 0.0050837833293074335,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/looped-hype",
-      "rank": 175
+      "rank": 109
     },
     {
       "id": "reserve-protocol",
@@ -3608,31 +2283,13 @@
       ],
       "revenue30d": 34431,
       "annualizedRevenue": 418910.5,
-      "marketCap": 86329995.18685195,
-      "revenueYield": 0.004852432796889581,
+      "marketCap": 86509245.16463447,
+      "revenueYield": 0.004842378397855369,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/reserve",
-      "rank": 176
-    },
-    {
-      "id": "gtr.trade-perps",
-      "name": "GTR.trade Perps",
-      "symbol": "GTR",
-      "category": "Interface",
-      "chains": [
-        "Hyperliquid L1"
-      ],
-      "revenue30d": 200.57999999999998,
-      "annualizedRevenue": 2440.39,
-      "marketCap": 576630.1403625566,
-      "revenueYield": 0.004232158240055928,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/factory/hyperliquid.ts",
-      "rank": 177
+      "rank": 110
     },
     {
       "id": "hyperion",
@@ -3644,35 +2301,13 @@
       ],
       "revenue30d": 1999,
       "annualizedRevenue": 24321.166666666668,
-      "marketCap": 6612824.54031907,
-      "revenueYield": 0.0036778787216231153,
+      "marketCap": 6610087.030974412,
+      "revenueYield": 0.003679401882713398,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/hyperion",
-      "rank": 178
-    },
-    {
-      "id": "termmax",
-      "name": "TermMax",
-      "symbol": "TMX",
-      "category": "Lending",
-      "chains": [
-        "Ethereum",
-        "Arbitrum",
-        "BSC",
-        "Berachain",
-        "BSquared"
-      ],
-      "revenue30d": 3828.3600000000006,
-      "annualizedRevenue": 46578.380000000005,
-      "marketCap": 15034799.368917767,
-      "revenueYield": 0.00309803801547854,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/termmax.ts",
-      "rank": 179
+      "rank": 111
     },
     {
       "id": "fidelity-digital-interest-token",
@@ -3690,25 +2325,29 @@
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/fidelity-digital-interest",
-      "rank": 180
+      "rank": 112
     },
     {
-      "id": "eggs-finance",
-      "name": "Eggs Finance",
-      "symbol": "EGGS",
-      "category": "Reserve Currency",
+      "id": "termmax",
+      "name": "TermMax",
+      "symbol": "TMX",
+      "category": "Lending",
       "chains": [
-        "Sonic"
+        "Ethereum",
+        "Arbitrum",
+        "BSC",
+        "Berachain",
+        "BSquared"
       ],
-      "revenue30d": 28.59,
-      "annualizedRevenue": 347.845,
-      "marketCap": 123759.27332818175,
-      "revenueYield": 0.0028106580674370427,
+      "revenue30d": 3828.3600000000006,
+      "annualizedRevenue": 46578.380000000005,
+      "marketCap": 15332039.776862534,
+      "revenueYield": 0.003037976725725111,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/eggs-finance",
-      "rank": 181
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/termmax.ts",
+      "rank": 113
     },
     {
       "id": "momentum",
@@ -3720,31 +2359,13 @@
       ],
       "revenue30d": 7634,
       "annualizedRevenue": 92880.33333333333,
-      "marketCap": 34176305.334112905,
-      "revenueYield": 0.002717682102419225,
+      "marketCap": 34491396.21892383,
+      "revenueYield": 0.0026928551324452966,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/momentum.ts",
-      "rank": 182
-    },
-    {
-      "id": "streamlock",
-      "name": "Streamlock",
-      "symbol": "LOCK",
-      "category": "Launchpad",
-      "chains": [
-        "Solana"
-      ],
-      "revenue30d": 1.42,
-      "annualizedRevenue": 17.276666666666664,
-      "marketCap": 6523.225647703186,
-      "revenueYield": 0.002648485212641654,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/streamlock.ts",
-      "rank": 183
+      "rank": 114
     },
     {
       "id": "frankencoin",
@@ -3756,13 +2377,13 @@
       ],
       "revenue30d": 8110.28,
       "annualizedRevenue": 98675.07333333332,
-      "marketCap": 43151370.073292166,
-      "revenueYield": 0.00228671935944872,
+      "marketCap": 43140247.52609214,
+      "revenueYield": 0.0022873089282497167,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/frankencoin",
-      "rank": 184
+      "rank": 115
     },
     {
       "id": "ankr",
@@ -3778,13 +2399,13 @@
       ],
       "revenue30d": 7655.7,
       "annualizedRevenue": 93144.35,
-      "marketCap": 42280065.29253502,
-      "revenueYield": 0.002203032312167351,
+      "marketCap": 42296400.30139037,
+      "revenueYield": 0.002202181493845427,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/ankr-lst.ts",
-      "rank": 185
+      "rank": 116
     },
     {
       "id": "space-and-time",
@@ -3796,70 +2417,13 @@
       ],
       "revenue30d": 7198,
       "annualizedRevenue": 87575.66666666667,
-      "marketCap": 39871270.06235984,
-      "revenueYield": 0.0021964604219954806,
+      "marketCap": 39933191.815886505,
+      "revenueYield": 0.0021930545164142554,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/space-and-time.ts",
-      "rank": 186
-    },
-    {
-      "id": "boardwalk",
-      "name": "Boardwalk",
-      "symbol": "BWLK",
-      "category": "Launchpad",
-      "chains": [
-        "Robinhood Chain",
-        "Arbitrum",
-        "Ethereum",
-        "Base"
-      ],
-      "revenue30d": 126.73,
-      "annualizedRevenue": 1541.881666666667,
-      "marketCap": 708892.7745172045,
-      "revenueYield": 0.002175056259695656,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/boardwalk.ts",
-      "rank": 187
-    },
-    {
-      "id": "beraborrow",
-      "name": "Beraborrow",
-      "symbol": "POLLEN",
-      "category": "CDP",
-      "chains": [
-        "Berachain"
-      ],
-      "revenue30d": 20.91,
-      "annualizedRevenue": 254.405,
-      "marketCap": 119023.92465820124,
-      "revenueYield": 0.002137427418315856,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/beraborrow",
-      "rank": 188
-    },
-    {
-      "id": "ethervista",
-      "name": "Ethervista",
-      "symbol": "VISTA",
-      "category": "Dexs",
-      "chains": [
-        "Ethereum"
-      ],
-      "revenue30d": 136.92000000000002,
-      "annualizedRevenue": 1665.8600000000001,
-      "marketCap": 783880.634101845,
-      "revenueYield": 0.0021251449870409284,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/ethervista.ts",
-      "rank": 189
+      "rank": 117
     },
     {
       "id": "yield-basis",
@@ -3871,13 +2435,13 @@
       ],
       "revenue30d": 4344,
       "annualizedRevenue": 52852,
-      "marketCap": 24886787.62483185,
-      "revenueYield": 0.0021236971519483965,
+      "marketCap": 24814716.49889618,
+      "revenueYield": 0.002129865154911239,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/yield-basis",
-      "rank": 190
+      "rank": 118
     },
     {
       "id": "aptos",
@@ -3889,13 +2453,13 @@
       ],
       "revenue30d": 87709,
       "annualizedRevenue": 1067126.1666666667,
-      "marketCap": 512239227.35505813,
-      "revenueYield": 0.002083257411145104,
+      "marketCap": 509517073.16927296,
+      "revenueYield": 0.0020943874560060984,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/aptos.ts",
-      "rank": 191
+      "rank": 119
     },
     {
       "id": "sushiswap",
@@ -3924,13 +2488,13 @@
       ],
       "revenue30d": 9624,
       "annualizedRevenue": 117092,
-      "marketCap": 56792290.15032627,
-      "revenueYield": 0.0020617587297512303,
+      "marketCap": 56631519.87457357,
+      "revenueYield": 0.002067611822167817,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/sushiswap-classic.ts",
-      "rank": 192
+      "rank": 120
     },
     {
       "id": "hopr",
@@ -3942,13 +2506,13 @@
       ],
       "revenue30d": 1277.3100000000004,
       "annualizedRevenue": 15540.605000000005,
-      "marketCap": 7711258.427206278,
-      "revenueYield": 0.0020153137320843536,
+      "marketCap": 7689374.268111392,
+      "revenueYield": 0.0020210493673650997,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/hopr",
-      "rank": 193
+      "rank": 121
     },
     {
       "id": "api3",
@@ -3960,13 +2524,13 @@
       ],
       "revenue30d": 5432,
       "annualizedRevenue": 66089.33333333333,
-      "marketCap": 33185991.705804344,
-      "revenueYield": 0.0019914828497282506,
+      "marketCap": 33161242.173039813,
+      "revenueYield": 0.001992969171313617,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/factory/curators.ts",
-      "rank": 194
+      "rank": 122
     },
     {
       "id": "zealousswap",
@@ -3979,13 +2543,13 @@
       ],
       "revenue30d": 222.98,
       "annualizedRevenue": 2712.923333333333,
-      "marketCap": 1382571.4913121792,
-      "revenueYield": 0.001962230054923623,
+      "marketCap": 1382570.7446283833,
+      "revenueYield": 0.0019622311146635257,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/factory/uniV2.ts",
-      "rank": 195
+      "rank": 123
     },
     {
       "id": "omnipair",
@@ -3997,43 +2561,13 @@
       ],
       "revenue30d": 336.41999999999996,
       "annualizedRevenue": 4093.1099999999997,
-      "marketCap": 2237069.8691618135,
-      "revenueYield": 0.0018296746366413706,
+      "marketCap": 2237407.9958419763,
+      "revenueYield": 0.0018293981283729569,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/omnipair",
-      "rank": 196
-    },
-    {
-      "id": "unlock-protocol",
-      "name": "Unlock Protocol",
-      "symbol": "UP",
-      "category": "Payments",
-      "chains": [
-        "OP Mainnet",
-        "Gnosis",
-        "Base",
-        "Scroll",
-        "BSC",
-        "Arbitrum",
-        "Polygon",
-        "Avalanche",
-        "Ethereum",
-        "Linea",
-        "Celo",
-        "Polygon zkEVM",
-        "ZKsync Era"
-      ],
-      "revenue30d": 113.59,
-      "annualizedRevenue": 1382.0116666666665,
-      "marketCap": 795502.8988550018,
-      "revenueYield": 0.0017372804909395673,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/unlock-protocol.ts",
-      "rank": 197
+      "rank": 124
     },
     {
       "id": "launch-coin-on-believe",
@@ -4045,13 +2579,13 @@
       ],
       "revenue30d": 212.74999999999997,
       "annualizedRevenue": 2588.458333333333,
-      "marketCap": 1592823.3587627204,
-      "revenueYield": 0.0016250755735676841,
+      "marketCap": 1596100.3255276363,
+      "revenueYield": 0.001621739117481631,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/believe",
-      "rank": 198
+      "rank": 125
     },
     {
       "id": "walrus-protocol",
@@ -4063,13 +2597,13 @@
       ],
       "revenue30d": 8361,
       "annualizedRevenue": 101725.5,
-      "marketCap": 65239607.90937491,
-      "revenueYield": 0.0015592598309497516,
+      "marketCap": 65268801.987297595,
+      "revenueYield": 0.0015585623897279054,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/walrus.ts",
-      "rank": 199
+      "rank": 126
     },
     {
       "id": "verse",
@@ -4082,13 +2616,13 @@
       ],
       "revenue30d": 142.95000000000002,
       "annualizedRevenue": 1739.2250000000001,
-      "marketCap": 1138930.4755053674,
-      "revenueYield": 0.0015270686292139734,
+      "marketCap": 1137584.423959819,
+      "revenueYield": 0.0015288755395805526,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/verse.ts",
-      "rank": 200
+      "rank": 127
     },
     {
       "id": "illuvium",
@@ -4101,51 +2635,13 @@
       ],
       "revenue30d": 2888.6999999999994,
       "annualizedRevenue": 35145.84999999999,
-      "marketCap": 25688710.074420925,
-      "revenueYield": 0.0013681438226435451,
+      "marketCap": 25768356.879526645,
+      "revenueYield": 0.0013639150592455473,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/illuvium.ts",
-      "rank": 201
-    },
-    {
-      "id": "thalaswap",
-      "name": "ThalaSwap",
-      "symbol": "THL",
-      "category": "Dexs",
-      "chains": [
-        "Aptos"
-      ],
-      "revenue30d": 72.42999999999998,
-      "annualizedRevenue": 881.2316666666665,
-      "marketCap": 697504.5365440125,
-      "revenueYield": 0.0012634063586639637,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/thalaswap",
-      "rank": 202
-    },
-    {
-      "id": "sommelier",
-      "name": "Sommelier",
-      "symbol": "SOMM",
-      "category": "Onchain Capital Allocator",
-      "chains": [
-        "OP Mainnet",
-        "Ethereum",
-        "Arbitrum"
-      ],
-      "revenue30d": 13.2,
-      "annualizedRevenue": 160.6,
-      "marketCap": 133151.1817168784,
-      "revenueYield": 0.0012061477632356766,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/sommelier.ts",
-      "rank": 203
+      "rank": 128
     },
     {
       "id": "bitway-earn",
@@ -4157,31 +2653,13 @@
       ],
       "revenue30d": 119243,
       "annualizedRevenue": 1450789.8333333333,
-      "marketCap": 1219279051.0159752,
-      "revenueYield": 0.001189875141481722,
+      "marketCap": 1215201156.7735398,
+      "revenueYield": 0.0011938680483034602,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/bitway-earn.ts",
-      "rank": 204
-    },
-    {
-      "id": "thena-v1",
-      "name": "THENA V1",
-      "symbol": "THE",
-      "category": "Dexs",
-      "chains": [
-        "BSC"
-      ],
-      "revenue30d": 943,
-      "annualizedRevenue": 11473.166666666666,
-      "marketCap": 9881477.396217655,
-      "revenueYield": 0.0011610780662270465,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/thena-v1.ts",
-      "rank": 205
+      "rank": 129
     },
     {
       "id": "zksync-era",
@@ -4193,32 +2671,31 @@
       ],
       "revenue30d": 9461,
       "annualizedRevenue": 115108.83333333333,
-      "marketCap": 99703990.25879592,
-      "revenueYield": 0.0011545057829135217,
+      "marketCap": 99598445.05968511,
+      "revenueYield": 0.001155729221117393,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/ethereum-l2.ts",
-      "rank": 206
+      "rank": 130
     },
     {
-      "id": "polycule",
-      "name": "Polycule",
-      "symbol": "PCULE",
-      "category": "Interface",
+      "id": "thena-v1",
+      "name": "THENA V1",
+      "symbol": "THE",
+      "category": "Dexs",
       "chains": [
-        "Polygon",
-        "Solana"
+        "BSC"
       ],
-      "revenue30d": 44.37,
-      "annualizedRevenue": 539.8349999999999,
-      "marketCap": 537207.3945815417,
-      "revenueYield": 0.0010048912309193084,
+      "revenue30d": 943,
+      "annualizedRevenue": 11473.166666666666,
+      "marketCap": 9998687.33998642,
+      "revenueYield": 0.0011474672901095285,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/polycule.ts",
-      "rank": 207
+      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/thena-v1.ts",
+      "rank": 131
     },
     {
       "id": "re",
@@ -4233,13 +2710,13 @@
       ],
       "revenue30d": 5998.31,
       "annualizedRevenue": 72979.43833333334,
-      "marketCap": 72669101.84881853,
-      "revenueYield": 0.0010042705424536612,
+      "marketCap": 72476295.19275835,
+      "revenueYield": 0.0010069421752206956,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/re-protocol",
-      "rank": 208
+      "rank": 132
     },
     {
       "id": "sui-foundation",
@@ -4251,13 +2728,13 @@
       ],
       "revenue30d": 223368,
       "annualizedRevenue": 2717644,
-      "marketCap": 3180316348.5927095,
-      "revenueYield": 0.0008545200232054142,
+      "marketCap": 3176646797.745457,
+      "revenueYield": 0.0008555071347336371,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/sui-foundation.ts",
-      "rank": 209
+      "rank": 133
     },
     {
       "id": "filecoin",
@@ -4269,49 +2746,13 @@
       ],
       "revenue30d": 44515,
       "annualizedRevenue": 541599.1666666666,
-      "marketCap": 639043293.0880482,
-      "revenueYield": 0.0008475156104831295,
+      "marketCap": 636015205.2577502,
+      "revenueYield": 0.0008515506582066373,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/filecoin.ts",
-      "rank": 210
-    },
-    {
-      "id": "jellyverse",
-      "name": "Jellyverse",
-      "symbol": "JLY",
-      "category": "Dexs",
-      "chains": [
-        "Sei"
-      ],
-      "revenue30d": 1.47,
-      "annualizedRevenue": 17.884999999999998,
-      "marketCap": 23198.789323831348,
-      "revenueYield": 0.0007709454036736016,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/jellyverse",
-      "rank": 211
-    },
-    {
-      "id": "bakerdao",
-      "name": "BakerDAO",
-      "symbol": "BREAD",
-      "category": "Reserve Currency",
-      "chains": [
-        "Berachain"
-      ],
-      "revenue30d": 1.6,
-      "annualizedRevenue": 19.466666666666665,
-      "marketCap": 29598.690770870682,
-      "revenueYield": 0.0006576867476119799,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/baker-dao",
-      "rank": 212
+      "rank": 134
     },
     {
       "id": "symmio",
@@ -4330,13 +2771,13 @@
       ],
       "revenue30d": 437.74999999999994,
       "annualizedRevenue": 5325.958333333332,
-      "marketCap": 8293744.173996821,
-      "revenueYield": 0.0006421657361980953,
+      "marketCap": 8317323.187915102,
+      "revenueYield": 0.0006403452424539471,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/symmio",
-      "rank": 213
+      "rank": 135
     },
     {
       "id": "berachain",
@@ -4348,13 +2789,13 @@
       ],
       "revenue30d": 2614,
       "annualizedRevenue": 31803.666666666668,
-      "marketCap": 56791426.68825894,
-      "revenueYield": 0.0005600082357719982,
+      "marketCap": 56680158.26793,
+      "revenueYield": 0.0005611075840037199,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/factory/chainTxFees.ts",
-      "rank": 214
+      "rank": 136
     },
     {
       "id": "flock.io",
@@ -4366,13 +2807,13 @@
       ],
       "revenue30d": 817.0400000000001,
       "annualizedRevenue": 9940.653333333334,
-      "marketCap": 18620192.847091787,
-      "revenueYield": 0.000533864144961631,
+      "marketCap": 18551325.86558869,
+      "revenueYield": 0.0005358459770130229,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/flock",
-      "rank": 215
+      "rank": 137
     },
     {
       "id": "plasma",
@@ -4384,31 +2825,13 @@
       ],
       "revenue30d": 10981,
       "annualizedRevenue": 133602.16666666666,
-      "marketCap": 282421596.25231415,
-      "revenueYield": 0.0004730593143001256,
+      "marketCap": 279460561.2846456,
+      "revenueYield": 0.00047807163219208476,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/plasma.ts",
-      "rank": 216
-    },
-    {
-      "id": "surf-liquid",
-      "name": "Surf Liquid",
-      "symbol": "SURF",
-      "category": "Yield",
-      "chains": [
-        "Base"
-      ],
-      "revenue30d": 4.329999999999996,
-      "annualizedRevenue": 52.681666666666615,
-      "marketCap": 119535.26922008999,
-      "revenueYield": 0.00044072069281634696,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/surf-liquid.ts",
-      "rank": 217
+      "rank": 138
     },
     {
       "id": "aave-v2",
@@ -4422,13 +2845,13 @@
       ],
       "revenue30d": 73738,
       "annualizedRevenue": 897145.6666666666,
-      "marketCap": 2062614570.73387,
-      "revenueYield": 0.00043495555563125194,
+      "marketCap": 2063744258.6992524,
+      "revenueYield": 0.00043471746214917363,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/aave.ts",
-      "rank": 218
+      "rank": 139
     },
     {
       "id": "solana",
@@ -4440,13 +2863,13 @@
       ],
       "revenue30d": 2158800,
       "annualizedRevenue": 26265400,
-      "marketCap": 61033315250.23372,
-      "revenueYield": 0.0004303452940793581,
+      "marketCap": 60877436604.940674,
+      "revenueYield": 0.00043144720712284985,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/solana.ts",
-      "rank": 219
+      "rank": 140
     },
     {
       "id": "avalanche",
@@ -4458,13 +2881,13 @@
       ],
       "revenue30d": 102086,
       "annualizedRevenue": 1242046.3333333333,
-      "marketCap": 3238474981.332261,
-      "revenueYield": 0.0003835281546076276,
+      "marketCap": 3234965963.72911,
+      "revenueYield": 0.00038394417352742815,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/avalanche.ts",
-      "rank": 220
+      "rank": 141
     },
     {
       "id": "tezos",
@@ -4476,13 +2899,13 @@
       ],
       "revenue30d": 7541,
       "annualizedRevenue": 91748.83333333333,
-      "marketCap": 257496326.73288473,
-      "revenueYield": 0.00035631123168801355,
+      "marketCap": 256222209.68380362,
+      "revenueYield": 0.0003580830617554891,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/tezos.ts",
-      "rank": 221
+      "rank": 142
     },
     {
       "id": "synapse-cross-chain-bridge",
@@ -4512,45 +2935,13 @@
       ],
       "revenue30d": 505.91,
       "annualizedRevenue": 6155.238333333334,
-      "marketCap": 20113220.915289823,
-      "revenueYield": 0.00030602946983266104,
+      "marketCap": 20182715.14768206,
+      "revenueYield": 0.0003049757323677161,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/synapse",
-      "rank": 222
-    },
-    {
-      "id": "whales-market",
-      "name": "Whales Market",
-      "symbol": "WHALES",
-      "category": "OTC Marketplace",
-      "chains": [
-        "Abstract",
-        "Taiko",
-        "Linea",
-        "Hyperliquid L1",
-        "Scroll",
-        "Mode",
-        "Berachain",
-        "ZKsync Era",
-        "Arbitrum",
-        "Ethereum",
-        "Avalanche",
-        "Base",
-        "OP Mainnet",
-        "BSC",
-        "Solana"
-      ],
-      "revenue30d": 9.94,
-      "annualizedRevenue": 120.93666666666667,
-      "marketCap": 421046.7472941534,
-      "revenueYield": 0.0002872285974036451,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/whales-market.ts",
-      "rank": 223
+      "rank": 143
     },
     {
       "id": "diem-relay",
@@ -4562,13 +2953,13 @@
       ],
       "revenue30d": 1255,
       "annualizedRevenue": 15269.166666666666,
-      "marketCap": 57652941.30737937,
-      "revenueYield": 0.0002648462735883393,
+      "marketCap": 57594325.12256619,
+      "revenueYield": 0.00026511581886188315,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/diem-relay.ts",
-      "rank": 224
+      "rank": 144
     },
     {
       "id": "sonic",
@@ -4580,32 +2971,13 @@
       ],
       "revenue30d": 2476,
       "annualizedRevenue": 30124.666666666668,
-      "marketCap": 117100645.62646972,
-      "revenueYield": 0.00025725448826950973,
+      "marketCap": 116852281.69489975,
+      "revenueYield": 0.00025780127037075665,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/factory/chainTxFees.ts",
-      "rank": 225
-    },
-    {
-      "id": "invariant",
-      "name": "Invariant",
-      "symbol": "INVT",
-      "category": "Dexs",
-      "chains": [
-        "Solana",
-        "Eclipse"
-      ],
-      "revenue30d": 0.4,
-      "annualizedRevenue": 4.866666666666666,
-      "marketCap": 22616.820050649923,
-      "revenueYield": 0.00021517908599740646,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/invariant",
-      "rank": 226
+      "rank": 145
     },
     {
       "id": "apriori",
@@ -4617,13 +2989,13 @@
       ],
       "revenue30d": 824.1400000000002,
       "annualizedRevenue": 10027.03666666667,
-      "marketCap": 59963652.32359199,
-      "revenueYield": 0.00016721857789042064,
+      "marketCap": 60359539.254971035,
+      "revenueYield": 0.0001661218225061397,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/apriori.ts",
-      "rank": 227
+      "rank": 146
     },
     {
       "id": "ton",
@@ -4635,13 +3007,13 @@
       ],
       "revenue30d": 43037,
       "annualizedRevenue": 523616.8333333333,
-      "marketCap": 3861160386.340955,
-      "revenueYield": 0.00013561126214431643,
+      "marketCap": 3883375279.8725543,
+      "revenueYield": 0.00013483549633928698,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/ton.ts",
-      "rank": 228
+      "rank": 147
     },
     {
       "id": "wompie",
@@ -4654,13 +3026,13 @@
       ],
       "revenue30d": 9.84,
       "annualizedRevenue": 119.72,
-      "marketCap": 1089613.8737018702,
-      "revenueYield": 0.00010987378454833867,
+      "marketCap": 1091489.355993497,
+      "revenueYield": 0.000109684990827078,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/magpie.ts",
-      "rank": 229
+      "rank": 148
     },
     {
       "id": "rain",
@@ -4672,33 +3044,13 @@
       ],
       "revenue30d": 97133.58,
       "annualizedRevenue": 1181791.8900000001,
-      "marketCap": 11979723587.70403,
-      "revenueYield": 0.00009864934540000486,
+      "marketCap": 11970954016.045418,
+      "revenueYield": 0.00009872161303234233,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/rain-one",
-      "rank": 230
-    },
-    {
-      "id": "iron-bank",
-      "name": "Iron Bank",
-      "symbol": "IB",
-      "category": "Lending",
-      "chains": [
-        "Ethereum",
-        "OP Mainnet",
-        "Avalanche"
-      ],
-      "revenue30d": 0.13,
-      "annualizedRevenue": 1.5816666666666668,
-      "marketCap": 20722.24652582218,
-      "revenueYield": 0.00007632698822956949,
-      "marketCapSource": "DeFiLlama",
-      "quality": "Direct match",
-      "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
-      "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/ironbank",
-      "rank": 231
+      "rank": 149
     },
     {
       "id": "cap",
@@ -4710,13 +3062,13 @@
       ],
       "revenue30d": 411.26,
       "annualizedRevenue": 5003.663333333333,
-      "marketCap": 71728003.87168603,
-      "revenueYield": 0.0000697588537704795,
+      "marketCap": 71723318.9399788,
+      "revenueYield": 0.0000697634103842938,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/cap",
-      "rank": 232
+      "rank": 150
     },
     {
       "id": "stusdt",
@@ -4735,7 +3087,7 @@
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/stUSDT",
-      "rank": 233
+      "rank": 151
     },
     {
       "id": "gravity-by-galxe",
@@ -4747,13 +3099,13 @@
       ],
       "revenue30d": 106.69,
       "annualizedRevenue": 1298.0616666666667,
-      "marketCap": 27647972.03890866,
-      "revenueYield": 0.00004694961586477012,
+      "marketCap": 27703343.673907973,
+      "revenueYield": 0.000046855776037216365,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/gravity",
-      "rank": 234
+      "rank": 152
     },
     {
       "id": "badger-dao",
@@ -4765,13 +3117,13 @@
       ],
       "revenue30d": 27,
       "annualizedRevenue": 328.5,
-      "marketCap": 7012585.584574665,
-      "revenueYield": 0.00004684434807078715,
+      "marketCap": 7011814.6330418745,
+      "revenueYield": 0.000046849498623652247,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/badger-dao",
-      "rank": 235
+      "rank": 153
     },
     {
       "id": "smardex-amm",
@@ -4787,13 +3139,13 @@
       ],
       "revenue30d": 15.240000000000002,
       "annualizedRevenue": 185.42000000000002,
-      "marketCap": 4621450.581853623,
-      "revenueYield": 0.00004012160180356829,
+      "marketCap": 4627287.515913937,
+      "revenueYield": 0.00004007099177699954,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/smardex",
-      "rank": 236
+      "rank": 154
     },
     {
       "id": "sei",
@@ -4805,13 +3157,13 @@
       ],
       "revenue30d": 589.99,
       "annualizedRevenue": 7178.211666666667,
-      "marketCap": 327264998.3415084,
-      "revenueYield": 0.000021933942532944025,
+      "marketCap": 326628267.76551723,
+      "revenueYield": 0.00002197670065660032,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/sei.ts",
-      "rank": 237
+      "rank": 155
     },
     {
       "id": "velo-finance",
@@ -4823,13 +3175,13 @@
       ],
       "revenue30d": 142.23,
       "annualizedRevenue": 1730.465,
-      "marketCap": 79984264.02977036,
-      "revenueYield": 0.000021635068109846158,
+      "marketCap": 80227234.04121096,
+      "revenueYield": 0.000021569545811726453,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/velo",
-      "rank": 238
+      "rank": 156
     },
     {
       "id": "cardano",
@@ -4841,13 +3193,13 @@
       ],
       "revenue30d": 7656,
       "annualizedRevenue": 93148,
-      "marketCap": 8314277000.625327,
-      "revenueYield": 0.000011203379439125522,
+      "marketCap": 8292837467.4763155,
+      "revenueYield": 0.000011232343617648024,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/cardano.ts",
-      "rank": 239
+      "rank": 157
     },
     {
       "id": "boson-protocol",
@@ -4863,13 +3215,13 @@
       ],
       "revenue30d": 1.4500000000000002,
       "annualizedRevenue": 17.64166666666667,
-      "marketCap": 3312562.820529063,
-      "revenueYield": 0.0000053256851635643986,
+      "marketCap": 3339712.1184822633,
+      "revenueYield": 0.000005282391428002468,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/boson",
-      "rank": 240
+      "rank": 158
     },
     {
       "id": "flying-tulip-lend",
@@ -4882,13 +3234,13 @@
       ],
       "revenue30d": 13.07,
       "annualizedRevenue": 159.01833333333335,
-      "marketCap": 52684256.368320085,
-      "revenueYield": 0.0000030183273769989794,
+      "marketCap": 52805969.151832946,
+      "revenueYield": 0.0000030113704167820138,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/flying-tulip-lend.ts",
-      "rank": 241
+      "rank": 159
     },
     {
       "id": "movement",
@@ -4900,13 +3252,13 @@
       ],
       "revenue30d": 8.569999999999999,
       "annualizedRevenue": 104.2683333333333,
-      "marketCap": 40573722.26607019,
-      "revenueYield": 0.0000025698488457522614,
+      "marketCap": 40446534.57539679,
+      "revenueYield": 0.000002577929961810836,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/move.ts",
-      "rank": 242
+      "rank": 160
     },
     {
       "id": "aspecta-buildkey",
@@ -4918,13 +3270,13 @@
       ],
       "revenue30d": 0.77,
       "annualizedRevenue": 9.368333333333334,
-      "marketCap": 4089189.320101583,
-      "revenueYield": 0.0000022910001469681545,
+      "marketCap": 4075156.9416239304,
+      "revenueYield": 0.000002298888967353512,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/aspecta.ts",
-      "rank": 243
+      "rank": 161
     },
     {
       "id": "peapods-finance",
@@ -4940,13 +3292,13 @@
       ],
       "revenue30d": 0.27,
       "annualizedRevenue": 3.2850000000000006,
-      "marketCap": 20774682.82191198,
-      "revenueYield": 1.5812515782600375e-7,
+      "marketCap": 20850752.088378403,
+      "revenueYield": 1.5754827385008156e-7,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/peapods-finance",
-      "rank": 244
+      "rank": 162
     },
     {
       "id": "blur-bids",
@@ -4958,23 +3310,23 @@
       ],
       "revenue30d": 0.02,
       "annualizedRevenue": 0.24333333333333332,
-      "marketCap": 47346006.25005601,
-      "revenueYield": 5.139469040919274e-9,
+      "marketCap": 47364845.326566495,
+      "revenueYield": 5.137424848653521e-9,
       "marketCapSource": "DeFiLlama",
       "quality": "Direct match",
       "note": "Revenue and market cap records matched by DeFiLlama protocol slug.",
       "methodologyUrl": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/blur",
-      "rank": 245
+      "rank": 163
     }
   ],
   "coverage": {
-    "revenueProtocolsSeen": 2295,
-    "eligibleRows": 245,
-    "rankedRows": 245,
+    "revenueProtocolsSeen": 2296,
+    "eligibleRows": 163,
+    "rankedRows": 163,
     "excluded": {
       "missingProtocolMatch": 39,
-      "nonPositiveRevenue": 829,
-      "nonPositiveMarketCap": 1182,
+      "nonPositiveRevenue": 830,
+      "belowMinMarketCap": 1264,
       "invalidSymbol": 0
     },
     "notes": [

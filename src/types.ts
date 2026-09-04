@@ -22,7 +22,8 @@ export interface RankingRow {
 export interface CoverageExclusionCounts {
   missingProtocolMatch: number
   nonPositiveRevenue: number
-  nonPositiveMarketCap: number
+  /** DeFiLlama circulating mcap missing, non-finite, or below $1,000,000 inclusive minimum. */
+  belowMinMarketCap: number
   invalidSymbol: number
 }
 

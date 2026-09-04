@@ -1,6 +1,6 @@
 # DeFi Protocol Revenue Yield
 
-Research dashboard ranking DeFiLlama protocols by annualized revenue / circulating market cap. Every category is eligible when trailing-30-day revenue, circulating market cap, and token symbol pass filters. All eligible matches are ranked globally with no truncation.
+Research dashboard ranking DeFiLlama protocols by annualized revenue / circulating market cap. Every category is eligible when trailing-30-day revenue is positive, circulating market cap is at least $1,000,000 (inclusive), and the token symbol passes filters. All eligible matches are ranked globally with no truncation.
 
 ## Scripts
 
@@ -48,6 +48,6 @@ No environment secrets are required. Do not add API keys or paid third-party cre
 
 ## Data notes
 
-- Rankings use DeFiLlama revenue + DeFiLlama circulating market cap only (no CoinGecko market-cap fallback).
+- Rankings use DeFiLlama revenue + DeFiLlama circulating market cap only (no CoinGecko market-cap fallback). Ranked protocols must have circulating market cap ≥ $1,000,000.
 - Detail price history uses CoinGecko free `market_chart` when DeFiLlama exposes `gecko_id`.
 - Upstream rate limits or missing identifiers can leave price series unavailable while revenue still renders.

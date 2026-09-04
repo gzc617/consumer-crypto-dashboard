@@ -4,8 +4,8 @@
  *
  * Revenue and circulating market cap both come from DeFiLlama free APIs.
  * Every category is eligible; rows require positive trailing-30d revenue,
- * positive circulating mcap, and a valid token symbol. All eligible matches
- * are ranked globally with no truncation.
+ * circulating mcap of at least $1,000,000 (inclusive), and a valid token
+ * symbol. All eligible matches are ranked globally with no truncation.
  */
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'

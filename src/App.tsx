@@ -75,7 +75,7 @@ export default function App() {
   const excludedTotal =
     data.coverage.excluded.missingProtocolMatch +
     data.coverage.excluded.nonPositiveRevenue +
-    data.coverage.excluded.nonPositiveMarketCap +
+    data.coverage.excluded.belowMinMarketCap +
     data.coverage.excluded.invalidSymbol
 
   return (
@@ -91,8 +91,9 @@ export default function App() {
             <h1>DeFi Protocol Revenue Yield</h1>
             <p className="lede">
               Ranking DeFiLlama protocols with positive trailing-30-day revenue and
-              positive circulating market cap by annualized revenue divided by market
-              cap. Every eligible category is included; the list is not truncated.
+              circulating market cap of at least $1,000,000 by annualized revenue
+              divided by market cap. Every eligible category is included; the list is
+              not truncated.
             </p>
           </div>
           <div className="header-actions">

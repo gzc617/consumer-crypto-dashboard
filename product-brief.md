@@ -9,7 +9,7 @@ Create a responsive research dashboard ranking every eligible DeFiLlama protocol
 This is a revenue yield, not profit, cash flow, tokenholder yield, or investment advice. A high value may reflect a tiny or illiquid token, temporary revenue, mismatched token economics, or bad source data.
 
 ## Universe
-Include every DeFiLlama revenue category. Require positive trailing-30-day protocol revenue, positive circulating market cap from DeFiLlama `/protocols`, and a non-placeholder token symbol. Match revenue protocols to `/protocols` by slug. Do not use CoinGecko market-cap fallbacks or bespoke watchlists for rankings. Publish honest coverage counts for exclusions.
+Include every DeFiLlama revenue category. Require positive trailing-30-day protocol revenue, circulating market cap of at least $1,000,000 (inclusive) from DeFiLlama `/protocols`, and a non-placeholder token symbol. Match revenue protocols to `/protocols` by slug. Do not use CoinGecko market-cap fallbacks or bespoke watchlists for rankings. Publish honest coverage counts for exclusions.
 
 ## Interface
 - Kraken-inspired research terminal: white/cool-gray surfaces, near-black text, purple `#7132f5`, green for positive states, 12px radii, Inter.

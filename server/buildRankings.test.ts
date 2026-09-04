@@ -177,30 +177,30 @@ describe('buildRankingsSnapshot', () => {
   }
 
   const protocols = [
-    { slug: 'alpha', symbol: 'AAA', mcap: 365 },
-    { slug: 'beta', symbol: 'BBB', mcap: 1000 },
-    { slug: 'gamma', symbol: '-', mcap: 100 },
+    { slug: 'alpha', symbol: 'AAA', mcap: 1_000_000 },
+    { slug: 'beta', symbol: 'BBB', mcap: 1_000_000 },
+    { slug: 'gamma', symbol: '-', mcap: 1_000_000 },
     { slug: 'delta', symbol: 'DDD', mcap: 0 },
     { slug: 'zeta', symbol: 'ZZZ', mcap: null },
-    { slug: 'theta', symbol: 'THETA', mcap: 1000 },
-    { slug: 'iota', symbol: 'IOTA', mcap: 1000 },
-    { slug: 'kappa', symbol: 'KAPPA', mcap: 1000 },
-    { slug: 'lambda', symbol: 'LAMBDA', mcap: 1000 },
-    { slug: 'mu', symbol: 'MU', mcap: 1000 },
-    { slug: 'nu', symbol: 'NU', mcap: 1000 },
-    { slug: 'xi', symbol: 'XI', mcap: 1000 },
-    { slug: 'omicron', symbol: 'OMI', mcap: 1000 },
-    { slug: 'pi', symbol: 'PI', mcap: 1000 },
-    { slug: 'rho', symbol: 'RHO', mcap: 1000 },
-    { slug: 'sigma', symbol: 'SIG', mcap: 1000 },
-    { slug: 'tau', symbol: 'TAU', mcap: 1000 },
-    { slug: 'upsilon', symbol: 'UPS', mcap: 1000 },
-    { slug: 'phi', symbol: 'PHI', mcap: 1000 },
-    { slug: 'chi', symbol: 'CHI', mcap: 1000 },
-    { slug: 'psi', symbol: 'PSI', mcap: 1000 },
-    { slug: 'omega', symbol: 'OMG', mcap: 1000 },
-    { slug: 'extra-1', symbol: 'EX1', mcap: 1000 },
-    { slug: 'extra-2', symbol: 'EX2', mcap: 1000 },
+    { slug: 'theta', symbol: 'THETA', mcap: 1_000_000 },
+    { slug: 'iota', symbol: 'IOTA', mcap: 1_000_000 },
+    { slug: 'kappa', symbol: 'KAPPA', mcap: 1_000_000 },
+    { slug: 'lambda', symbol: 'LAMBDA', mcap: 1_000_000 },
+    { slug: 'mu', symbol: 'MU', mcap: 1_000_000 },
+    { slug: 'nu', symbol: 'NU', mcap: 1_000_000 },
+    { slug: 'xi', symbol: 'XI', mcap: 1_000_000 },
+    { slug: 'omicron', symbol: 'OMI', mcap: 1_000_000 },
+    { slug: 'pi', symbol: 'PI', mcap: 1_000_000 },
+    { slug: 'rho', symbol: 'RHO', mcap: 1_000_000 },
+    { slug: 'sigma', symbol: 'SIG', mcap: 1_000_000 },
+    { slug: 'tau', symbol: 'TAU', mcap: 1_000_000 },
+    { slug: 'upsilon', symbol: 'UPS', mcap: 1_000_000 },
+    { slug: 'phi', symbol: 'PHI', mcap: 1_000_000 },
+    { slug: 'chi', symbol: 'CHI', mcap: 1_000_000 },
+    { slug: 'psi', symbol: 'PSI', mcap: 1_000_000 },
+    { slug: 'omega', symbol: 'OMG', mcap: 1_000_000 },
+    { slug: 'extra-1', symbol: 'EX1', mcap: 1_000_000 },
+    { slug: 'extra-2', symbol: 'EX2', mcap: 1_000_000 },
   ]
 
   it('includes every eligible category and retains more than 20 ranked rows', () => {
@@ -229,7 +229,7 @@ describe('buildRankingsSnapshot', () => {
     expect(snapshot.coverage.excluded).toEqual({
       missingProtocolMatch: 1,
       nonPositiveRevenue: 1,
-      nonPositiveMarketCap: 2,
+      belowMinMarketCap: 2,
       invalidSymbol: 1,
     })
   })
@@ -239,6 +239,36 @@ describe('buildRankingsSnapshot', () => {
     expect(finitePositive(0)).toBe(false)
     expect(isValidTokenSymbol('-')).toBe(false)
     expect(isValidTokenSymbol('ETH')).toBe(true)
+  })
+
+  it('excludes circulating market cap of 999,999 and includes 1,000,000', () => {
+    const snapshot = buildRankingsSnapshot(
+      {
+        protocols: [
+          {
+            slug: 'below-min',
+            name: 'Below Min',
+            category: 'Dexes',
+            total30d: 100,
+          },
+          {
+            slug: 'at-min',
+            name: 'At Min',
+            category: 'Lending',
+            total30d: 100,
+          },
+        ],
+      },
+      [
+        { slug: 'below-min', symbol: 'BEL', mcap: 999_999 },
+        { slug: 'at-min', symbol: 'ATM', mcap: 1_000_000 },
+      ],
+    )
+
+    expect(snapshot.rankings.map((row) => row.id)).toEqual(['at-min'])
+    expect(snapshot.rankings[0]?.marketCap).toBe(1_000_000)
+    expect(snapshot.coverage.excluded.belowMinMarketCap).toBe(1)
+    expect(snapshot.coverage.excluded).not.toHaveProperty('nonPositiveMarketCap')
   })
 
   it('serializes CSV for the full ranked set', () => {

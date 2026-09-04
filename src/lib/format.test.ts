@@ -87,7 +87,7 @@ describe('snapshot calculation integrity', () => {
       expect(row.annualizedRevenue).toBeCloseTo(annualized, 6)
       expect(row.revenueYield).toBeCloseTo(yieldValue, 10)
       expect(row.revenue30d).toBeGreaterThan(0)
-      expect(row.marketCap).toBeGreaterThan(0)
+      expect(row.marketCap).toBeGreaterThanOrEqual(1_000_000)
       expect(row.marketCapSource).toBe('DeFiLlama')
     }
   })
@@ -139,9 +139,11 @@ describe('ranking helpers', () => {
   it('paginates large result sets', () => {
     expect(PAGE_SIZE).toBe(50)
     expect(pageCount(245)).toBe(5)
+    expect(data.rankings.length).toBeGreaterThan(PAGE_SIZE)
     expect(slicePage(data.rankings, 1)).toHaveLength(PAGE_SIZE)
-    expect(slicePage(data.rankings, 5).length).toBe(
-      data.rankings.length - PAGE_SIZE * 4,
+    const lastPage = pageCount(data.rankings.length)
+    expect(slicePage(data.rankings, lastPage).length).toBe(
+      data.rankings.length - PAGE_SIZE * (lastPage - 1),
     )
   })
 })
